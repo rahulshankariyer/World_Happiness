@@ -107,3 +107,42 @@ Output:
 2021 report: 0
 
 2022 report: 10
+
+As we can see from the above output, the 2022 data has 10 null values. So whichever rows containing null values were discarded.
+
+    # Removing missing values from the 2022 report
+
+    report_2022 = report_2022[report_2022.notnull().all(1)]
+    report_2022
+    
+Now, let's quickly check the number of countries data used for each of these 3 years
+
+    # Number of countries ranked in each report
+
+    print('2020 report:',len(report_2020))
+    print('2021 report:',len(report_2021))
+    print('2022 report:',len(report_2022))
+    
+Output:
+
+2020 report: 153
+
+2021 report: 149
+
+2022 report: 146
+
+## Data Analysis
+
+Let's have a look at the Top 5 countries in the world each year in terms of Happiness Score.
+
+    # Top 5 Happiest Countries in each report
+
+    plt.figure(figsize=(24,8))
+    plt.subplot(1,3,1)
+    sns.barplot(report_2020['Country name'][0:5],report_2020['Ladder score'][0:5])
+    plt.subplot(1,3,2)
+    sns.barplot(report_2021['Country name'][0:5],report_2021['Ladder score'][0:5])
+    plt.subplot(1,3,3)
+    sns.barplot(report_2022['Country'][0:5],report_2022['Happiness score'][0:5])
+    
+![alt text]()
