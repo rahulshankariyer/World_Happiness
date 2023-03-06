@@ -35,5 +35,75 @@ With the help of the pandas library that was imported, the CSV files containing 
     
 ## Data Overview
 
-Here's an overview of the 3 dataframes that we created in the previous step:
+Before going into analysis, overview of the 3 dataframes that was created in the previous steps done
 
+    # Overview of the data
+
+    report_2020.head()
+    report_2021.head()
+    report_2022.head()
+    
+Here's a look at the columns present in the table
+
+    # Investigating the columns
+
+    print(report_2020.columns)
+    print('nn')
+    print(report_2021.columns)
+    print('nn')
+    print(report_2022.columns)
+
+Output:
+
+Index(['Country name', 'Regional indicator', 'Ladder score',
+       'Standard error of ladder score', 'upperwhisker', 'lowerwhisker',
+       'Logged GDP per capita', 'Social support', 'Healthy life expectancy',
+       'Freedom to make life choices', 'Generosity',
+       'Perceptions of corruption', 'Ladder score in Dystopia',
+       'Explained by: Log GDP per capita', 'Explained by: Social support',
+       'Explained by: Healthy life expectancy',
+       'Explained by: Freedom to make life choices',
+       'Explained by: Generosity', 'Explained by: Perceptions of corruption',
+       'Dystopia + residual'],
+      dtype='object')
+      
+nn
+
+Index(['Country name', 'Regional indicator', 'Ladder score',
+       'Standard error of ladder score', 'upperwhisker', 'lowerwhisker',
+       'Logged GDP per capita', 'Social support', 'Healthy life expectancy',
+       'Freedom to make life choices', 'Generosity',
+       'Perceptions of corruption', 'Ladder score in Dystopia',
+       'Explained by: Log GDP per capita', 'Explained by: Social support',
+       'Explained by: Healthy life expectancy',
+       'Explained by: Freedom to make life choices',
+       'Explained by: Generosity', 'Explained by: Perceptions of corruption',
+       'Dystopia + residual'],
+      dtype='object')
+      
+nn
+
+Index(['RANK', 'Country', 'Happiness score', 'Whisker-high', 'Whisker-low',
+       'Dystopia (1#83) + residual', 'Explained by: GDP per capita',
+       'Explained by: Social support', 'Explained by: Healthy life expectancy',
+       'Explained by: Freedom to make life choices',
+       'Explained by: Generosity', 'Explained by: Perceptions of corruption'],
+      dtype='object')
+      
+## Data Cleaning
+
+As part of the data cleaning process, the first step was to check for null values
+
+    # Number of missing null values in each report
+
+    print('2020 report:',report_2020.isnull().sum().sum())
+    print('2021 report:',report_2021.isnull().sum().sum())
+    print('2022 report:',report_2022.isnull().sum().sum())
+    
+Output:
+
+2020 report: 0
+
+2021 report: 0
+
+2022 report: 10
