@@ -146,3 +146,13 @@ Let's have a look at the Top 5 countries in the world each year in terms of Happ
     sns.barplot(report_2022['Country'][0:5],report_2022['Happiness score'][0:5])
     
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%205%20Happiest%20Countries.png)
+
+With Finland topping all 3 reports, let's have a look at its Average Happiness Score.
+
+    # Average score of Finland
+
+    print('Average Happiness Score of Finland:',(report_2020['Ladder score'].iat[0] + report_2021['Ladder score'].iat[0] + report_2022['Happiness score'].iat[0]) / 3)
+    
+Output:
+
+Average Happiness Score of Finland: 7.823900028333334
