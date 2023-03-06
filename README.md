@@ -313,7 +313,7 @@ For a more detailed analysis, we will now look at the rankings in each of the 6 
     
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perceptions%20of%20Corruption%20Rankings%202022.png)
 
-Let's see the Relationship of the Happiness Score with each of the 6 indicators.
+Let's see the Relationship of the Happiness Score with each of the 6 indicators in 2020 & 2021.
 
     # Relationships between Happiness Score and other data in all reports
 
@@ -366,3 +366,23 @@ Let's see the Relationship of the Happiness Score with each of the 6 indicators.
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Each%20Indicator.png)
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Each%20Indicator%202.png)
+
+Let's now take a look at the correlation of Happiness Score and all the 6 indicators with each other in 2020 and 2021.
+
+    # Correlations - 2020
+
+    correlations_2020 = report_2020[['Logged GDP per capita', 'Social support', 'Healthy life expectancy',
+                                     'Freedom to make life choices', 'Generosity','Perceptions of corruption',
+                                     'Dystopia + residual']]
+    sns.pairplot(correlations_2020, kind='reg')
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlations%20-%202020.png)
+
+    # Correlations - 2021
+
+    correlations_2021 = report_2021[['Logged GDP per capita', 'Social support', 'Healthy life expectancy',
+    'Freedom to make life choices', 'Generosity','Perceptions of corruption',
+    'Dystopia + residual']]
+    sns.pairplot(correlations_2021, kind='reg')
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlations%20-%202021.png)
