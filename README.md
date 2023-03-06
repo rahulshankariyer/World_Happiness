@@ -145,4 +145,4 @@ Let's have a look at the Top 5 countries in the world each year in terms of Happ
     plt.subplot(1,3,3)
     sns.barplot(report_2022['Country'][0:5],report_2022['Happiness score'][0:5])
     
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%205%20Happiest%20Countries.png)
