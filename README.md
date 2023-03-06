@@ -386,3 +386,9 @@ Let's now take a look at the correlation of Happiness Score and all the 6 indica
     sns.pairplot(correlations_2021, kind='reg')
     
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlations%20-%202021.png)
+
+## Insights
+
+1. Finland, Denmark, Switzerland, Iceland, Netherlands and Norway were the happiest countries in the world overall from 2020 to 2022, with Finland at the top with 7.823900028333334
+2. Afghanistan, Zimbabwe, Rwanda and Botswana were the unahppiest nations in the world overall from 2020 to 2022, with Afghanistan at the bottom with 2.4979666716666666
+3. 
