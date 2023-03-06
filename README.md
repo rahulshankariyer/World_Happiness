@@ -156,3 +156,17 @@ With Finland topping all 3 reports, let's have a look at its Average Happiness S
 Output:
 
 Average Happiness Score of Finland: 7.823900028333334
+
+Now, let's move on to the Bottom 5 countries in the world each year in terms of Happiness Score.
+
+    # Top 5 unhappiest countries in each report
+
+    plt.figure(figsize=(24,8))
+    plt.subplot(1,3,1)
+    sns.barplot(report_2020['Country name'][148:153],report_2020['Ladder score'][148:153])
+    plt.subplot(1,3,2)
+    sns.barplot(report_2021['Country name'][144:149],report_2021['Ladder score'][144:149])
+    plt.subplot(1,3,3)
+    sns.barplot(report_2022['Country'][141:146],report_2022['Happiness score'][141:146])
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%205%20Happiest%20Countries.png)
