@@ -312,3 +312,57 @@ For a more detailed analysis, we will now look at the rankings in each of the 6 
     iplot(choromap3)
     
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perceptions%20of%20Corruption%20Rankings%202022.png)
+
+Let's see the Relationship of the Happiness Score with each of the 6 indicators.
+
+    # Relationships between Happiness Score and other data in all reports
+
+    plt.figure(figsize=(24,8))
+
+    plt.subplot(1,3,1)
+    plt.scatter( report_2020['Ladder score'], report_2020['Logged GDP per capita'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Logged GDP per capita'])
+    plt.xlabel('Logged GDP per capita in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+
+    plt.subplot(1,3,2)
+    plt.scatter( report_2020['Ladder score'], report_2020['Social support'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Social support'])
+    plt.xlabel('Social support in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+
+    plt.subplot(1,3,3)
+    plt.scatter( report_2020['Ladder score'], report_2020['Healthy life expectancy'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Healthy life expectancy'])
+    plt.xlabel('Healthy life expectancy in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+
+    plt.figure(figsize=(24,8))
+
+    plt.subplot(1,3,1)
+    plt.scatter( report_2020['Ladder score'], report_2020['Freedom to make life choices'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Freedom to make life choices'])
+    plt.xlabel('Freedom to make life choices in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+
+    plt.subplot(1,3,2)
+    plt.scatter( report_2020['Ladder score'], report_2020['Generosity'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Generosity'])
+    plt.xlabel('Generosity in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+
+    plt.subplot(1,3,3)
+    plt.scatter( report_2020['Ladder score'], report_2020['Perceptions of corruption'])
+    plt.scatter( report_2021['Ladder score'], report_2021['Perceptions of corruption'])
+    plt.xlabel('Perceptions of corruption in 2020 and 2021')
+    plt.ylabel('Happiness score')
+    plt.legend(['2020','2021'])
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Each%20Indicator.png)
+
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Each%20Indicator%202.png)
