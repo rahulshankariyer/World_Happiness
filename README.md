@@ -389,9 +389,9 @@ Let's now take a look at the correlation of Happiness Score and all the 6 indica
 
 ## Insights
 
-1. Finland, Denmark, Switzerland, Iceland, Netherlands and Norway were the happiest countries in the world overall from 2020 to 2022, with Finland at the top with 7.823900028333334
-2. Afghanistan, Zimbabwe, Rwanda and Botswana were the unahppiest nations in the world overall from 2020 to 2022, with Afghanistan at the bottom with 2.4979666716666666
-3. USA did very well in the overall Happiness Rankings, coming in 16th place. Its biggest strengths were GDP Per Capita and Social Supports while its major drawbacks were Healthy Life Expectancy and Perceptions of Corruption. While the US didn't fare too badly in terms of Freedom to Make Life Choices and Generosity, those are still areas where the US can improve in comparison to other Western nations
+1. Finland, Denmark, Switzerland, Iceland, Netherlands and Norway were the happiest countries in the world overall from 2020 to 2022, with Finland at the top with 7.823900028333334 (out of 10)
+2. Afghanistan, Zimbabwe, Rwanda and Botswana were the unahppiest nations in the world overall from 2020 to 2022, with Afghanistan at the bottom with 2.4979666716666666 (out of 10)
+3. USA did very well in the overall 2022 Happiness Rankings, coming in 16th place. Its biggest strengths were GDP Per Capita (1.982) and Social Support (1.182) while its major drawbacks were Healthy Life Expectancy (0.628) and Perceptions of Corruption (0.177). While the US didn't fare too badly in terms of Freedom to Make Life Choices (0.574) and Generosity (0.22), those are still areas where the US can improve in comparison to other Western nations
 4. GDP Per Capita, Social Support, Healthy Life Expectancy and Perceptions of Corruption have had the biggest influence on the Overall Happiness Score of a Country
 5. GDP Per Capita has had a major influence on Perceptions of Corruption, Healthy Life Expectancy and Social Support
 6. Social Support also has a strong correlation with Freedom to Make Life Choices and Healthy Life Expectancy
@@ -399,4 +399,6 @@ Let's now take a look at the correlation of Happiness Score and all the 6 indica
 
 ## Conclusions
 
-1. 
+1. The Covid-19 Pandemic had very little impact on the Happiness Rankings of Countries
+2. Given the ranking of the US in the 2022 Happiness Rankings, the mentioned Positives have definitely outwieghed the Negatives
+3. In order for a country to improve its Happiness, it should reduce corruption, give its people more support and freedom and improve the resources needed for a better living
