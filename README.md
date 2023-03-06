@@ -170,3 +170,13 @@ Now, let's move on to the Bottom 5 countries in the world each year in terms of 
     sns.barplot(report_2022['Country'][141:146],report_2022['Happiness score'][141:146])
     
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%205%20Happiest%20Countries.png)
+
+With Afghanistan at the bottom of all 3 reports, let's have a look at its Average Happiness Score.
+
+    # Average score of Afghanistan
+
+    print('Average Happiness Score of Afghanistan:',(report_2020['Ladder score'].iat[-1] + report_2021['Ladder score'].iat[-1] + report_2022['Happiness score'].iat[-1]) / 3)
+    
+Output:
+
+Average Happiness Score of Afghanistan: 2.4979666716666666
