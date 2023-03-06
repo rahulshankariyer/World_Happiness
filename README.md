@@ -2,7 +2,7 @@
 
 ## Project Objective
 
-To determine the impact of the Covid-19 pandemic on the Happiness of people across the world
+To determine the impact of the Covid-19 pandemic on the Happiness of people across the world, compare the Happiness of different countries and also look specifically at how USA fared.
 
 ## Data Used
 
@@ -180,3 +180,135 @@ With Afghanistan at the bottom of all 3 reports, let's have a look at its Averag
 Output:
 
 Average Happiness Score of Afghanistan: 2.4979666716666666
+
+Let's have a look at how USA has done during these 3 years and where they stand when it comes to overall Happiness Rankings. First, we will check out the rankings in terms of the overall Happiness Score.
+
+    # Happiness Rankings of Countries in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['RANK'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Happiness'})
+    layout = dict(title = 'Global Happiness 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20Rankings%202022.png)
+
+For a more detailed analysis, we will now look at the rankings in each of the 6 indicators that contribute to the Happiness score
+
+    # Countries Rankings based on GDP Per Capita in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: GDP per capita'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'GDP per capita'})
+    layout = dict(title = 'GDP per capita in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20Per%20Capita%20Rankings%202022.png)
+
+    # Countries Rankings based on Healthy Life Expectancy in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: Healthy life expectancy'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Healthy life expectancy'})
+    layout = dict(title = 'Healthy life expectancy in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Healthy%20Life%20Expectancy%20Rankings%202022.png)
+
+    # Countries Rankings based on Social Support in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: Social support'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Social support'})
+    layout = dict(title = 'Social support in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Social%20Support%20Rankings%202022.png)
+
+    # Countries Rankings based on Freedom to Make Life Choices in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: Freedom to make life choices'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Freedom to make life choices in 2022'})
+    layout = dict(title = 'Freedom to make life choices in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20Rankings%202022.png)
+
+    # Countries Rankings based on Generosity in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: Generosity'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Generosity'})
+    layout = dict(title = 'Generosity in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Generosity%20Rankings%202022.png)
+
+    # Countries Rankings based on Perceptions of Corruption in 2022
+
+    import plotly.graph_objs as go
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot 
+    init_notebook_mode(connected=True)
+    data = dict(type = 'choropleth', 
+               locations = report_2022['Country'],
+               locationmode = 'country names',
+               z = report_2022['Explained by: Perceptions of corruption'], 
+               text = report_2022['Country'],
+               colorbar = {'title':'Perceptions of corruption'})
+    layout = dict(title = 'Perceptions of corruption in 2022', 
+                 geo = dict(showframe = False))
+    choromap3 = go.Figure(data = [data], layout=layout)
+    iplot(choromap3)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perceptions%20of%20Corruption%20Rankings%202022.png)
