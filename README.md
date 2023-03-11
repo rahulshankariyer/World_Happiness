@@ -164,7 +164,7 @@ Let's look at which countries are at the top of the happiness charts and which o
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Unhappiest%20Countries.png)
 
 Let's look at the relationship between the Happiness Score and GDP Per Capita of the countries, with a specific focus on region
 
