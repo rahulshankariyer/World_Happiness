@@ -255,7 +255,7 @@ Below is the average perceptions of corruption in each region
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20in%20Various%20Regions.png)
 
 Let's look at the Top 10 & Bottom 10 countries in terms of Perception of Corruption
 
