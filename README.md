@@ -76,7 +76,7 @@ Remove unnecessary columns and rename the rest
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/After%20Renaming%20Columns.png)
 
 ### Step 5:
 
