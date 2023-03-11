@@ -107,7 +107,7 @@ Investigate null values (if any)
     
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Null%20Values.png)
 
 Remove null values
 
