@@ -349,3 +349,9 @@ Finally, let's look at a Correlation Map to see how Happiness and the six differ
 7. Western Europe, North America and ANZ gave the best Freedom to make life choices while Africa and the Middle East lacked in this regard
 8. GDP Per Capita, Social Support and Healthy Life Expectancy had the biggest influence on the Happiness score of countries
 
+## Conclusion:
+
+1. Having a high GDP Per Capita, less Corruption and high degree of Freedom to make life choices definitely boosts the Happiness score
+2. Having a low Healthy Life Expectancy definitely drags down the Happiness Score
+3. Social support also had a major influence on the Happiness score while Generosity was the only indicator with little influence on the overall Happiness score
+4. The Western countries as well as Australia and New Zealand are happier places to live in than Asia and Africa while South America and Eastern Europe are somewhere in the middle
