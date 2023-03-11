@@ -216,7 +216,7 @@ Let's look at what percentage each region contributes to the World's GDP
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20By%20Region.png)
 
 Let's look at the influence of Corruption on the Happiness of countries, with a specific focus on region
 
