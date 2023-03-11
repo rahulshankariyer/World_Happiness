@@ -341,5 +341,6 @@ Finally, let's look at a Correlation Map to see how Happiness and the six differ
 ## Insights:
 
 1. 8 out of the Top 10 nations in terms of Happiness score are in Western Europe while 8 out of the Bottom 10 nations in terms of Happiness score are in Sub-Saharan Africa
-2. 
+2. A majority of the countries with the highest GDP are Western European countries. A closer look also shows us that the 4 countries from the North America and ANZ region - USA, Canada, Australia and NZ - are also near the top right, which indicates that they too have high GDP Per capita as well as Happiness Score
+3. A majority of the countries with low GDP Per Capita as well as low Happiness score are from Africa and the Middle East
 
