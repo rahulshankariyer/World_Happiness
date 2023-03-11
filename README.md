@@ -88,16 +88,16 @@ Check for null values, investigate if any and remove them
     
 <b> Output: </b>
 
-country                         0
-regional_indicator              1
-happiness_score                 1
-gdp_per_capita                  1
-social_support                  1
-healthy_life_expectancy         1
-freedom_to_make_life_choices    1
-generosity                      1
-perceptions_of_corruption       1
-dtype: int64  
+    country                         0
+    regional_indicator              1
+    happiness_score                 1
+    gdp_per_capita                  1
+    social_support                  1
+    healthy_life_expectancy         1
+    freedom_to_make_life_choices    1
+    generosity                      1
+    perceptions_of_corruption       1
+    dtype: int64  
 
 Investigate null values (if any)
 
@@ -137,7 +137,7 @@ For many parts of this analysis, the countries were split into 10 different regi
 
 Lets take a look into the total number of countries in each region
 
-    #Total Countries by Region
+    # Total Countries by Region
 
     total_country = data.groupby('regional_indicator')[['country']].count()
     total_country
@@ -164,7 +164,177 @@ Let's look at which countries are at the top of the happiness charts and which o
 
 <b> Output: </b>
 
-Let's investigate the relationship between the Happiness Score and GDP Per Capita of the countries, with a specific focus on region
+
+
+Let's look at the relationship between the Happiness Score and GDP Per Capita of the countries, with a specific focus on region
+
+    # Plot between Happiness and GDP
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and GDP')
+    sns.scatterplot(x = data.happiness_score,y = data.gdp_per_capita,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
+
+    plt.legend(loc = 'upper left',fontsize = '10')
+    plt.xlabel('Happiness Score')
+    plt.ylabel('GDP Per Capita')
+
+<b> Output: </b>
+
+
+
+Let's total up the GDP of the countries by Region
+
+    # GDP by Region
+
+    gdp_region = data.groupby('regional_indicator')['gdp_per_capita'].sum()
+
+    gdp_region
+    
+<b> Output: </b>
+
+    regional_indicator
+    Central and Eastern Europe            26.917
+    Commonwealth of Independent States    15.237
+    East Asia                              7.102
+    Latin America and Caribbean           30.077
+    Middle East and North Africa          24.062
+    North America and ANZ                  7.620
+    South Asia                             7.168
+    Southeast Asia                        13.203
+    Sub-Saharan Africa                    37.405
+    Western Europe                        37.134
+    Name: gdp_per_capita, dtype: float64
+    
+Let's look at what percentage each region contributes to the World's GDP
+
+    labels = ['Central and Eastern Europe','Commonwealth of Independent States','East Asia','Latin America and Carribean','Middle East and North Africa','North America and ANZ','South Asia','Southeast Asia','Sub-Saharan Africa','Western Europe']
+    colours = {'North America and ANZ':'C0','Latin America and Carribean':'C1','Western Europe':'C2','Central and Eastern Europe':'C3','Commonwealth of Independent States':'C4','Middle East and North Africa':'C5','Sub-Saharan Africa':'C6','South Asia':'C7','Southeast Asia':'C8','East Asia':'C9'}
+
+    gdp_region.plot.pie(autopct = '%1.1f%%',labels = labels,colors = [colours[key] for key in labels])
+    plt.title('GDP by Region')
+    plt.ylabel('')
+
+<b> Output: </b>
+
+
+
+Let's look at the influence of Corruption on the Happiness of countries, with a specific focus on region
+
+    # Corruption vs Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
+    plt.legend(loc = 'lower left',fontsize = 14)
+    plt.xlabel('Happiness Score')
+    plt.ylabel('Corruption Index')
+    
+<b> Output: </b>
+
+
+
+Below is the average perceptions of corruption in each region
+
+    # Corruption in different regions
+
+    corruption = data.groupby('regional_indicator')[['perceptions_of_corruption']].mean()
+    corruption
+
+<b> Output: </b>
+
+
+
+    labels = ['Central and Eastern Europe','Commonwealth of Independent States','East Asia','Latin America and Carribean','Middle East and North Africa','North America and ANZ','South Asia','Southeast Asia','Sub-Saharan Africa','Western Europe']
+    colours = {'North America and ANZ':'C0','Latin America and Carribean':'C1','Western Europe':'C2','Central and Eastern Europe':'C3','Commonwealth of Independent States':'C4','Middle East and North Africa':'C5','Sub-Saharan Africa':'C6','South Asia':'C7','Southeast Asia':'C8','East Asia':'C9'}
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Perception of Corruption in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Corruption Index',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(corruption.index,corruption.perceptions_of_corruption,color = [colours[key] for key in labels])
+
+<b> Output: </b>
+
+
+
+Let's look at the Top 10 & Bottom 10 countries in terms of Perception of Corruption
+
+    # Countries with the Best Perception of Corruption
+
+    country = data.sort_values(by = 'perceptions_of_corruption').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Countries with the Best Perception of Corruption')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Corruption Index',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.perceptions_of_corruption,color = 'green')
+
+<b> Output: </b>
+
+
+
+    # Countries with the Worst Perception of Corruption
+
+    country = data.sort_values(by = 'perceptions_of_corruption').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Countries with the Worst Perception of Corruption')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Corruption Index',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.perceptions_of_corruption,color = 'red')
+
+<b> Output: </b>
+
+
+
+Let's look at the relationship between the Happiness Score and Healthy Life Expectancy of the countries, with a specific look into the Top 10 and Bottom 10 countries in this category
+
+    # Healthy Life Expectancy vs Happiness
+
+    fig, axes = plt.subplots(1,2,figsize = (16,6))
+    plt.tight_layout(pad = 2)
+
+    xlabels = top_10.country
+    axes[0].set_title('10 Happiest Countries Per Life Expectancy')
+    axes[0].set_xticklabels(xlabels,rotation = 45,ha = 'right')
+    sns.barplot(x = top_10.country,y = top_10.healthy_life_expectancy,ax = axes[0])
+    axes[0].set_xlabel('Country')
+    axes[0].set_ylabel('Life Expectancy')
+
+    xlabels = bottom_10.country
+    axes[1].set_title('10 Unhappiest Countries Per Life Expectancy')
+    axes[1].set_xticklabels(xlabels,rotation = 45,ha = 'right')
+    sns.barplot(x = bottom_10.country,y = bottom_10.healthy_life_expectancy,ax = axes[1])
+    axes[1].set_xlabel('Country')
+    axes[1].set_ylabel('Life Expectancy')
+
+<b> Output: </b>
+
+
+
+Let's look at the relationship between the Happiness Score and Freedom to Make Life Choices of the countries, with a specific focus on regions
+
+    # Freedom to Make Life Choices vs Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    sns.scatterplot(x = data.freedom_to_make_life_choices,y = data.happiness_score,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
+    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.xlabel('Freedom to Make Life Choices')
+    plt.ylabel('Happiness Score')
+
+<b> Output: </b>
+
+
+
+Finally, let's look at a Correlation Map to see how Happiness and the six different indicators for Happiness all influence each other
+
+    # Correlation Map
+
+    cor = data.corr(method = 'pearson')
+    f, ax = plt.subplots(figsize = (10,5))
+    sns.heatmap(cor, mask = np.zeros_like(cor,dtype = np.bool),cmap = 'Reds',square = True,ax = ax)
+    
+<b> Output: </b>
 
 
 
