@@ -180,7 +180,7 @@ Let's look at the relationship between the Happiness Score and GDP Per Capita of
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP.png)
 
 Let's total up the GDP of the countries by Region
 
