@@ -271,7 +271,7 @@ Let's look at the Top 10 & Bottom 10 countries in terms of Perception of Corrupt
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Best%20Perception%20of%20Corruption.png)
 
     # Countries with the Worst Perception of Corruption
 
