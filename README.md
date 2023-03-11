@@ -241,7 +241,7 @@ Below is the average perceptions of corruption in each region
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20in%20Different%20Regions.png)
 
     labels = ['Central and Eastern Europe','Commonwealth of Independent States','East Asia','Latin America and Carribean','Middle East and North Africa','North America and ANZ','South Asia','Southeast Asia','Sub-Saharan Africa','Western Europe']
     colours = {'North America and ANZ':'C0','Latin America and Carribean':'C1','Western Europe':'C2','Central and Eastern Europe':'C3','Commonwealth of Independent States':'C4','Middle East and North Africa':'C5','Sub-Saharan Africa':'C6','South Asia':'C7','Southeast Asia':'C8','East Asia':'C9'}
