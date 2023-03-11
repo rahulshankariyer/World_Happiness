@@ -310,7 +310,7 @@ Let's look at the relationship between the Happiness Score and Healthy Life Expe
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Life%20Expectancy.png)
 
 Let's look at the relationship between the Happiness Score and Freedom to Make Life Choices of the countries, with a specific focus on regions
 
