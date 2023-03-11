@@ -346,5 +346,6 @@ Finally, let's look at a Correlation Map to see how Happiness and the six differ
 4. The Western European countries as well as North America and ANZ both had the best perception among its citizens when it comes to corruption while the Asian and African countries were among the worst in this regard
 5. 7 out of the Top 10 countries in terms of Happiness score were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
 6. 5 out of the 10 Unhappiest countries figured in the Bottom 10 in terms of Healthy Life Expectancy as well while Israel and Switzerland were in the only nations in the Top 10 in both Happiness and Healthy Life Expectancy
-7. 
+7. Western Europe, North America and ANZ gave the best Freedom to make life choices while Africa and the Middle East lacked in this regard
+8. GDP Per Capita, Social Support and Healthy Life Expectancy had the biggest influence on the Happiness score of countries
 
