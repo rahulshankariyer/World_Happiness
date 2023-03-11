@@ -336,7 +336,7 @@ Finally, let's look at a Correlation Map to see how Happiness and the six differ
     
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
 
 ## Insights:
 
