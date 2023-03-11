@@ -294,17 +294,17 @@ Let's look at the relationship between the Happiness Score and Healthy Life Expe
     fig, axes = plt.subplots(1,2,figsize = (16,6))
     plt.tight_layout(pad = 2)
 
-    xlabels = top_10.country
+    xlabels = data.sort_values(by = 'healthy_life_expectancy').tail(10)
     axes[0].set_title('10 Happiest Countries Per Life Expectancy')
     axes[0].set_xticklabels(xlabels,rotation = 45,ha = 'right')
-    sns.barplot(x = top_10.country,y = top_10.healthy_life_expectancy,ax = axes[0])
+    sns.barplot(x = xlabels.country,y = xlabels.healthy_life_expectancy,ax = axes[0])
     axes[0].set_xlabel('Country')
     axes[0].set_ylabel('Life Expectancy')
 
-    xlabels = bottom_10.country
+    xlabels = data.sort_values(by = 'healthy_life_expectancy').head(10)
     axes[1].set_title('10 Unhappiest Countries Per Life Expectancy')
     axes[1].set_xticklabels(xlabels,rotation = 45,ha = 'right')
-    sns.barplot(x = bottom_10.country,y = bottom_10.healthy_life_expectancy,ax = axes[1])
+    sns.barplot(x = xlabels.country,y = xlabels.healthy_life_expectancy,ax = axes[1])
     axes[1].set_xlabel('Country')
     axes[1].set_ylabel('Life Expectancy')
 
