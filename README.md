@@ -144,7 +144,7 @@ Lets take a look into the total number of countries in each region
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Total%20Countries%20by%20Region.png)
 
 Let's look at which countries are at the top of the happiness charts and which ones are at the bottom
 
