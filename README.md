@@ -324,7 +324,7 @@ Let's look at the relationship between the Happiness Score and Freedom to Make L
 
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20vs%20Happiness.png)
 
 Finally, let's look at a Correlation Map to see how Happiness and the six different indicators for Happiness all influence each other
 
