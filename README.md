@@ -230,7 +230,7 @@ Let's look at the influence of Corruption on the Happiness of countries, with a 
     
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20vs%20Happiness.png)
 
 Below is the average perceptions of corruption in each region
 
