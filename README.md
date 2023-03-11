@@ -118,7 +118,7 @@ Remove null values
     
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Removing%20Null%20Values.png)
 
 ## Data Analysis Process
  
