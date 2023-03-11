@@ -51,7 +51,7 @@ Extract the data from the CSV file and view the data
     
 <b> Output: </b>
 
-
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/View%20of%20the%20Data.png)
     
 ### Step 4:
 
