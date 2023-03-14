@@ -121,21 +121,23 @@ Remove null values
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Removing%20Null%20Values.png)
 
 ## Data Analysis Process
+
+<b>STEP 1.</b>
  
-For many parts of this analysis, the countries were split into 10 different regions:
+For this analysis, the countries were split into 10 different regions:
 
-1. North America and ANZ
-2. Latin America and Carribean
-3. Western Europe
-4. Central and Eastern Europe
-5. Commonwealth of Independent States
-6. Middle East and North Africa
-7. Sub-Saharan Africa
-8. South Asia
-9. Southeast Asia
-10. East Asia
+A. North America and ANZ
+B. Latin America and Carribean
+C. Western Europe
+D. Central and Eastern Europe
+E. Commonwealth of Independent States
+F. Middle East and North Africa
+G. Sub-Saharan Africa
+H. South Asia
+I. Southeast Asia
+J. East Asia
 
-Lets take a look into the total number of countries in each region
+Total number of countries in each region:
 
     # Total Countries by Region
 
@@ -146,7 +148,9 @@ Lets take a look into the total number of countries in each region
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Total%20Countries%20by%20Region.png)
 
-Let's look at which countries are at the top of the happiness charts and which ones are at the bottom
+<b>STEP 2.</b>
+
+Top 10 and Bottom 10 Countries on the Happiness Chart
 
     # Top 10 Happiest Countries
 
@@ -157,7 +161,7 @@ Let's look at which countries are at the top of the happiness charts and which o
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Happiest%20Countries.png)
 
-    # Top 10 Unhappiest Countries
+    # Bottom 10 Unhappiest Countries
 
     bottom_10 = data.tail(10)
     bottom_10
@@ -166,7 +170,21 @@ Let's look at which countries are at the top of the happiness charts and which o
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Unhappiest%20Countries.png)
 
-Let's look at the relationship between the Happiness Score and GDP Per Capita of the countries, with a specific focus on region
+<b>STEP 3: Correlation Mapo between Happiness and six different influencers of happiness</b>
+
+    # Correlation Map
+
+    cor = data.corr(method = 'pearson')
+    f, ax = plt.subplots(figsize = (10,5))
+    sns.heatmap(cor, mask = np.zeros_like(cor,dtype = np.bool),cmap = 'Reds',square = True,ax = ax)
+    
+<b> Output: </b>
+
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
+
+<b>STEP 4./b>
+
+Relationship between the Happiness Score and GDP Per Capita of the countries, by egion
 
     # Plot between Happiness and GDP
 
@@ -182,45 +200,13 @@ Let's look at the relationship between the Happiness Score and GDP Per Capita of
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP.png)
 
-Let's total up the GDP of the countries by Region
+<b>STEP 5: Top 10 and Bottom 10 Countries on the Happiness Chart</b>
 
-    # GDP by Region
 
-    gdp_region = data.groupby('regional_indicator')['gdp_per_capita'].sum()
 
-    gdp_region
-    
-<b> Output: </b>
+<b>STEP 6: Influence of Corruption on Happiness, by Region and Countries</b>
 
-    regional_indicator
-    Central and Eastern Europe            26.917
-    Commonwealth of Independent States    15.237
-    East Asia                              7.102
-    Latin America and Caribbean           30.077
-    Middle East and North Africa          24.062
-    North America and ANZ                  7.620
-    South Asia                             7.168
-    Southeast Asia                        13.203
-    Sub-Saharan Africa                    37.405
-    Western Europe                        37.134
-    Name: gdp_per_capita, dtype: float64
-    
-Let's look at what percentage each region contributes to the World's GDP
-
-    labels = ['Central and Eastern Europe','Commonwealth of Independent States','East Asia','Latin America and Carribean','Middle East and North Africa','North America and ANZ','South Asia','Southeast Asia','Sub-Saharan Africa','Western Europe']
-    colours = {'North America and ANZ':'C0','Latin America and Carribean':'C1','Western Europe':'C2','Central and Eastern Europe':'C3','Commonwealth of Independent States':'C4','Middle East and North Africa':'C5','Sub-Saharan Africa':'C6','South Asia':'C7','Southeast Asia':'C8','East Asia':'C9'}
-
-    gdp_region.plot.pie(autopct = '%1.1f%%',labels = labels,colors = [colours[key] for key in labels])
-    plt.title('GDP by Region')
-    plt.ylabel('')
-
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20By%20Region.png)
-
-Let's look at the influence of Corruption on the Happiness of countries, with a specific focus on region
-
-    # Corruption vs Happiness
+    # Corruption and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
     sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
@@ -232,7 +218,7 @@ Let's look at the influence of Corruption on the Happiness of countries, with a 
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20vs%20Happiness.png)
 
-Below is the average perceptions of corruption in each region
+Below are the average perceptions of corruption in each region
 
     # Corruption in different regions
 
@@ -257,7 +243,7 @@ Below is the average perceptions of corruption in each region
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20in%20Various%20Regions.png)
 
-Let's look at the Top 10 & Bottom 10 countries in terms of Perception of Corruption
+Top 10 & Bottom 10 countries in terms of Perception of Corruption
 
     # Countries with the Best Perception of Corruption
 
@@ -287,9 +273,9 @@ Let's look at the Top 10 & Bottom 10 countries in terms of Perception of Corrupt
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Worst%20Perception%20of%20Corruption.png)
 
-Let's look at the relationship between the Happiness Score and Healthy Life Expectancy of the countries, with a specific look into the Top 10 and Bottom 10 countries in this category
+<b> STEP 7: Relationship between the Happiness Score and Healthy Life Expectancy</b>
 
-    # Healthy Life Expectancy vs Happiness
+    # Healthy Life Expectancy and Happiness
 
     fig, axes = plt.subplots(1,2,figsize = (16,6))
     plt.tight_layout(pad = 2)
@@ -312,9 +298,9 @@ Let's look at the relationship between the Happiness Score and Healthy Life Expe
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Life%20Expectancy.png)
 
-Let's look at the relationship between the Happiness Score and Freedom to Make Life Choices of the countries, with a specific focus on regions
+<b> STEP 8: Happiness Score and Freedom to make life choices of countries, by region</b>
 
-    # Freedom to Make Life Choices vs Happiness
+    # Freedom to Make Life Choices and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
     sns.scatterplot(x = data.freedom_to_make_life_choices,y = data.happiness_score,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
@@ -325,18 +311,6 @@ Let's look at the relationship between the Happiness Score and Freedom to Make L
 <b> Output: </b>
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20vs%20Happiness.png)
-
-Finally, let's look at a Correlation Map to see how Happiness and the six different indicators for Happiness all influence each other
-
-    # Correlation Map
-
-    cor = data.corr(method = 'pearson')
-    f, ax = plt.subplots(figsize = (10,5))
-    sns.heatmap(cor, mask = np.zeros_like(cor,dtype = np.bool),cmap = 'Reds',square = True,ax = ax)
-    
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
 
 ## Insights:
 
