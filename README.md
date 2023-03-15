@@ -194,7 +194,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP%20Per%20Capita.png)
 
 ### STEP 5: Top 10 and Bottom 10 Countries by Happiness in Terms of GDP per capita
 
@@ -210,7 +210,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20GDP%20Per%20Capita.png)
 
     # Bottom 10 Countries in terms of GDP Per Capita
 
@@ -224,7 +224,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20GDP%20Per%20Capita.png)
 
 ### STEP 6: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
 
