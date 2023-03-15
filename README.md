@@ -280,7 +280,7 @@ Total number of countries in each region:
     plt.title('Plot between Happiness and Healthy Life Expectancy')
     sns.scatterplot(x = data.happiness_score,y = data.healthy_life_expectancy,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = 14)
+    plt.legend(loc = 'lower right',fontsize = 14)
     plt.xlabel('Happiness Score')
     plt.ylabel('Healthy Life Expectancy')
 
