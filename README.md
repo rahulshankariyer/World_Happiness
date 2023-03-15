@@ -286,7 +286,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
 
 ### STEP 9: Top 10 & Bottom 10 Countries in Terms of Healthy Life Expectancy
 
@@ -302,7 +302,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20Healthy%20Life%20Expectancy.png)
 
     # Bottom 10 Countries in terms of Healthy Life Expectancy
 
@@ -316,7 +316,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20Healthy%20Life%20Expectancy.png)
 
 ### STEP 10: Happiness Score and Freedom to Make Life Choices of Countries, by Region
 
