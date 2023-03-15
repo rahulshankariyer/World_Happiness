@@ -332,7 +332,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20vs%20Happiness.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Freedom%20to%20Make%20Life%20Choices.png)
 
 ### STEP 11: Top 10 & Bottom 10 Countries in Terms of Freedom to Make Life Choices
 
@@ -348,7 +348,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20Freedom%20to%20Make%20Life%20Choices.png)
 
     # Bottom 10 Countries in terms of Freedom to Make Life Choices
 
@@ -362,7 +362,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20Freedom%20to%20Make%20Life%20Choices.png)
 
 ### STEP 12: Happiness Score and Social Support of Countries, by Region
 
