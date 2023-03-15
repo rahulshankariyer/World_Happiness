@@ -240,7 +240,7 @@ Total number of countries in each region:
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20vs%20Happiness.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
 
 ### STEP 7: Top 10 & Bottom 10 Countries in Terms of Perception of Corruption
 
@@ -256,7 +256,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Best%20Perception%20of%20Corruption.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20Perception%20of%20Corruption.png)
 
     # Bottom 10 Countries in terms of Perception of Corruption
 
@@ -270,7 +270,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Worst%20Perception%20of%20Corruption.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20Perception%20of%20Corruption.png)
 
 ### STEP 8: Relationship between the Happiness Score and Healthy Life Expectancy of the Countries, by Region
 
