@@ -188,7 +188,7 @@ Total number of countries in each region:
     plt.title('Plot between Happiness and GDP Per Capita')
     sns.scatterplot(x = data.happiness_score,y = data.gdp_per_capita,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = '10')
+    plt.legend(loc = 'lower right',fontsize = '10')
     plt.xlabel('Happiness Score')
     plt.ylabel('GDP Per Capita')
 
