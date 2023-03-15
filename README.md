@@ -378,7 +378,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Social%20Support.png)
 
 ### STEP 13: Top 10 & Bottom 10 Countries in Terms of Social Support
 
@@ -394,7 +394,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20Social%20Support.png)
 
     # Bottom 10 Countries in terms of Social Support
 
@@ -408,7 +408,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20Social%20Support.png)
 
 ### STEP 14: Happiness Score and Generosity of Countries, by Region
 
