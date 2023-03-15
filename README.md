@@ -122,7 +122,7 @@ Remove null values
 
 ## Data Analysis Process
 
-<b>STEP 1.</b>
+## STEP 1.
  
 For this analysis, the countries were split into 10 different regions:
 
@@ -148,7 +148,7 @@ Total number of countries in each region:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Total%20Countries%20by%20Region.png)
 
-<b>STEP 2.</b>
+## STEP 2.
 
 Top 10 and Bottom 10 Countries on the Happiness Chart
 
