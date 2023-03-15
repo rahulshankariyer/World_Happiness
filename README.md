@@ -122,7 +122,7 @@ Remove null values
 
 ## Data Analysis Process
 
-## STEP 1.
+### STEP 1: Total Number of Countries in each Region
  
 For this analysis, the countries were split into 10 different regions:
 
@@ -148,9 +148,7 @@ Total number of countries in each region:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Total%20Countries%20by%20Region.png)
 
-## STEP 2.
-
-Top 10 and Bottom 10 Countries on the Happiness Chart
+### STEP 2: Top 10 and Bottom 10 Countries on the Happiness Chart
 
     # Top 10 Happiest Countries
 
@@ -170,7 +168,7 @@ Top 10 and Bottom 10 Countries on the Happiness Chart
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Unhappiest%20Countries.png)
 
-<b>STEP 3: Correlation Mapo between Happiness and six different influencers of happiness</b>
+### STEP 3: Correlation Map between Happiness and Six Different Influencers of Happiness
 
     # Correlation Map
 
@@ -182,15 +180,13 @@ Top 10 and Bottom 10 Countries on the Happiness Chart
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
 
-<b>STEP 4./b>
+### STEP 4: Relationship between the Happiness Score and GDP Per Capita of the Countries, by Region
 
-Relationship between the Happiness Score and GDP Per Capita of the countries, by egion
-
-    # Plot between Happiness and GDP
+    # Plot between Happiness and GDP Per Capita
 
     plt.rcParams['figure.figsize'] = (15,7)
-    plt.title('Plot between Happiness and GDP')
-    sns.scatterplot(x = data.happiness_score,y = data.gdp_per_capita,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
+    plt.title('Plot between Happiness and GDP Per Capita')
+    sns.scatterplot(x = data.happiness_score,y = data.gdp_per_capita,hue = data.regional_indicator,s = 200)
 
     plt.legend(loc = 'upper left',fontsize = '10')
     plt.xlabel('Happiness Score')
@@ -200,17 +196,45 @@ Relationship between the Happiness Score and GDP Per Capita of the countries, by
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP.png)
 
-<b>STEP 5: Top 10 and Bottom 10 Countries on the Happiness Chart</b>
+### STEP 5: Top 10 and Bottom 10 Countries by Happiness in Terms of GDP per capita
 
+    # Top 10 Countries in terms of GDP Per Capita
 
+    country = data.sort_values(by = 'gdp_per_capita').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Top 10 Countries in terms of GDP Per Capita')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('GDP Per Capita',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.gdp_per_capita,color = 'green')
 
-<b>STEP 6: Influence of Corruption on Happiness, by Region and Countries</b>
+<b> Output: </b>
+
+![alt text]()
+
+    # Bottom 10 Countries in terms of GDP Per Capita
+
+    country = data.sort_values(by = 'gdp_per_capita').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Bottom 10 Countries in terms of GDP Per Capita')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('GDP Per Capita',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.gdp_per_capita,color = 'red')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 6: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
 
     # Corruption and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
-    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
-    plt.legend(loc = 'lower left',fontsize = 14)
+    plt.title('Plot between Happiness and Corruption')
+    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,s = 200)
+
+    plt.legend(loc = 'upper left',fontsize = 14)
     plt.xlabel('Happiness Score')
     plt.ylabel('Corruption Index')
     
@@ -218,38 +242,13 @@ Relationship between the Happiness Score and GDP Per Capita of the countries, by
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20vs%20Happiness.png)
 
-Below are the average perceptions of corruption in each region
+### STEP 7: Top 10 & Bottom 10 Countries in Terms of Perception of Corruption
 
-    # Corruption in different regions
-
-    corruption = data.groupby('regional_indicator')[['perceptions_of_corruption']].mean()
-    corruption
-
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Corruption%20in%20Different%20Regions.png)
-
-    labels = ['Central and Eastern Europe','Commonwealth of Independent States','East Asia','Latin America and Carribean','Middle East and North Africa','North America and ANZ','South Asia','Southeast Asia','Sub-Saharan Africa','Western Europe']
-    colours = {'North America and ANZ':'C0','Latin America and Carribean':'C1','Western Europe':'C2','Central and Eastern Europe':'C3','Commonwealth of Independent States':'C4','Middle East and North Africa':'C5','Sub-Saharan Africa':'C6','South Asia':'C7','Southeast Asia':'C8','East Asia':'C9'}
-
-    plt.rcParams['figure.figsize'] = (12,8)
-    plt.title('Perception of Corruption in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
-    plt.ylabel('Corruption Index',fontsize = 15)
-    plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(corruption.index,corruption.perceptions_of_corruption,color = [colours[key] for key in labels])
-
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20in%20Various%20Regions.png)
-
-Top 10 & Bottom 10 countries in terms of Perception of Corruption
-
-    # Countries with the Best Perception of Corruption
+    # Top 10 Countries in terms of Perception of Corruption
 
     country = data.sort_values(by = 'perceptions_of_corruption').tail(10)
     plt.rcParams['figure.figsize'] = (12,6)
-    plt.title('Countries with the Best Perception of Corruption')
+    plt.title('Top 10 Countries in terms of Perception of Corruption')
     plt.xlabel('Country',fontsize = 13)
     plt.ylabel('Corruption Index',fontsize = 13)
     plt.xticks(rotation = 30,ha = 'right')
@@ -259,11 +258,11 @@ Top 10 & Bottom 10 countries in terms of Perception of Corruption
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Best%20Perception%20of%20Corruption.png)
 
-    # Countries with the Worst Perception of Corruption
+    # Bottom 10 Countries in terms of Perception of Corruption
 
     country = data.sort_values(by = 'perceptions_of_corruption').head(10)
     plt.rcParams['figure.figsize'] = (12,6)
-    plt.title('Countries with the Worst Perception of Corruption')
+    plt.title('Bottom 10 Countries in terms of Perception of Corruption')
     plt.xlabel('Country',fontsize = 13)
     plt.ylabel('Corruption Index',fontsize = 13)
     plt.xticks(rotation = 30,ha = 'right')
@@ -273,37 +272,60 @@ Top 10 & Bottom 10 countries in terms of Perception of Corruption
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Countries%20with%20the%20Worst%20Perception%20of%20Corruption.png)
 
-<b> STEP 7: Relationship between the Happiness Score and Healthy Life Expectancy</b>
+### STEP 8: Relationship between the Happiness Score and Healthy Life Expectancy of the Countries, by Region
 
     # Healthy Life Expectancy and Happiness
 
-    fig, axes = plt.subplots(1,2,figsize = (16,6))
-    plt.tight_layout(pad = 2)
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and Healthy Life Expectancy')
+    sns.scatterplot(x = data.happiness_score,y = data.healthy_life_expectancy,hue = data.regional_indicator,s = 200)
 
-    xlabels = data.sort_values(by = 'healthy_life_expectancy').tail(10)
-    axes[0].set_title('10 Happiest Countries Per Life Expectancy')
-    axes[0].set_xticklabels(xlabels,rotation = 45,ha = 'right')
-    sns.barplot(x = xlabels.country,y = xlabels.healthy_life_expectancy,ax = axes[0])
-    axes[0].set_xlabel('Country')
-    axes[0].set_ylabel('Life Expectancy')
-
-    xlabels = data.sort_values(by = 'healthy_life_expectancy').head(10)
-    axes[1].set_title('10 Unhappiest Countries Per Life Expectancy')
-    axes[1].set_xticklabels(xlabels,rotation = 45,ha = 'right')
-    sns.barplot(x = xlabels.country,y = xlabels.healthy_life_expectancy,ax = axes[1])
-    axes[1].set_xlabel('Country')
-    axes[1].set_ylabel('Life Expectancy')
+    plt.legend(loc = 'upper left',fontsize = 14)
+    plt.xlabel('Happiness Score')
+    plt.ylabel('Healthy Life Expectancy')
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Happiness%20vs%20Life%20Expectancy.png)
+![alt text]()
 
-<b> STEP 8: Happiness Score and Freedom to make life choices of countries, by region</b>
+### STEP 9: Top 10 & Bottom 10 Countries in Terms of Healthy Life Expectancy
+
+    # Top 10 Countries in terms of Healthy Life Expectancy
+
+    country = data.sort_values(by = 'healthy_life_expectancy').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('10 Happiest Countries as per Healthy Life Expectancy')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Healthy Life Expectancy',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.healthy_life_expectancy,color = 'green')
+
+<b> Output: </b>
+
+![alt text]()
+
+    # Bottom 10 Countries in terms of Healthy Life Expectancy
+
+    country = data.sort_values(by = 'healthy_life_expectancy').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('10 Happiest Countries as per Healthy Life Expectancy')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Healthy Life Expectancy',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.healthy_life_expectancy,color = 'red')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 10: Happiness Score and Freedom to Make Life Choices of Countries, by Region
 
     # Freedom to Make Life Choices and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
-    sns.scatterplot(x = data.freedom_to_make_life_choices,y = data.happiness_score,hue = data.regional_indicator,hue_order = ['North America and ANZ','Latin America and Caribbean','Western Europe','Central and Eastern Europe','Commonwealth of Independent States','Middle East and North Africa','Sub-Saharan Africa','South Asia','Southeast Asia','East Asia'],s = 200)
+    plt.title('Plot between Happiness and Freedom to Make Life Choices')
+    sns.scatterplot(x = data.freedom_to_make_life_choices,y = data.happiness_score,hue = data.regional_indicator,s = 200)
+
     plt.legend(loc = 'upper left',fontsize = '12')
     plt.xlabel('Freedom to Make Life Choices')
     plt.ylabel('Happiness Score')
@@ -311,6 +333,128 @@ Top 10 & Bottom 10 countries in terms of Perception of Corruption
 <b> Output: </b>
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20vs%20Happiness.png)
+
+### STEP 11: Top 10 & Bottom 10 Countries in Terms of Freedom to Make Life Choices
+
+    # Top 10 Countries in terms of Freedom to Make Life Choices
+
+    country = data.sort_values(by = 'freedom_to_make_life_choices').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Top 10 Countries in terms of Freedom to Make Life Choices')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Freedom to Make Life Choices',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.freedom_to_make_life_choices,color = 'green')
+
+<b> Output: </b>
+
+![alt text]()
+
+    # Bottom 10 Countries in terms of Freedom to Make Life Choices
+
+    country = data.sort_values(by = 'freedom_to_make_life_choices').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Bottom 10 Countries in terms of Freedom to Make Life Choices')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Freedom to Make Life Choices',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.freedom_to_make_life_choices,color = 'red')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 12: Happiness Score and Social Support of Countries, by Region
+
+    # Social Support and Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and Social Support')
+    sns.scatterplot(x = data.social_support,y = data.happiness_score,hue = data.regional_indicator,s = 200)
+
+    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.xlabel('Social Support')
+    plt.ylabel('Happiness Score')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 13: Top 10 & Bottom 10 Countries in Terms of Social Support
+
+    # Top 10 Countries in terms of Social Support
+
+    country = data.sort_values(by = 'social_support').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Top 10 Countries in terms of Social Support')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Social Support',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.social_support,color = 'green')
+
+<b> Output: </b>
+
+![alt text]()
+
+    # Bottom 10 Countries in terms of Social Support
+
+    country = data.sort_values(by = 'social_support').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Bottom 10 Countries in terms of Social Support')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Social Support',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.social_support,color = 'red')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 14: Happiness Score and Generosity of Countries, by Region
+
+    # Generosity and Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and Generosity')
+    sns.scatterplot(x = data.generosity,y = data.happiness_score,hue = data.regional_indicator,s = 200)
+
+    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.xlabel('Generosity')
+    plt.ylabel('Happiness Score')
+
+<b> Output: </b>
+
+![alt text]()
+
+### STEP 15: Top 10 & Bottom 10 Countries in Terms of Generosity
+
+    # Top 10 Countries in terms of Generosity
+
+    country = data.sort_values(by = 'generosity').tail(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Top 10 Countries in terms of Generosity')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Generosity',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.generosity,color = 'green')
+
+<b> Output: </b>
+
+![alt text]()
+
+    # Bottom 10 Countries in terms of Generosity
+
+    country = data.sort_values(by = 'generosity').head(10)
+    plt.rcParams['figure.figsize'] = (12,6)
+    plt.title('Bottom 10 Countries in terms of Generosity')
+    plt.xlabel('Country',fontsize = 13)
+    plt.ylabel('Generosity',fontsize = 13)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(country.country,country.generosity,color = 'red')
+
+<b> Output: </b>
+
+![alt text]()
 
 ## Insights:
 
