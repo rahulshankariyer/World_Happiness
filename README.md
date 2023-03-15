@@ -458,17 +458,16 @@ Total number of countries in each region:
 
 ## Insights:
 
-1. 8 out of the Top 10 nations in terms of Happiness score are in Western Europe while 8 out of the Bottom 10 nations in terms of Happiness score are in Sub-Saharan Africa
-2. 5 out of the 10 Happiest Nations are in the Top 10 in terms of GDP Per Capita while only 3 out of the 10 Unhappiest Nations were in the Bottom 10 in terms of GDP Per Capita
-3. 7 out of the 10 Happiest Nations were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
-6. 5 out of the 10 Unhappiest countries figured in the Bottom 10 in terms of Healthy Life Expectancy as well while Israel and Switzerland were in the only nations in the Top 10 in both Happiness and Healthy Life Expectancy
-7. 6 out of the 10 Happiest Countires were in the Top 10 in terms of Freedom to Make Life Choices while Lebanon and Afghanistan were not only the only nations in the Bottom 10 in terms of Both Happiness and Freedom to Make Life Choices, but also the Bottom 2 in both
-8. 5 out of the 10 Happiest Countries were in the Top 10 in terms of Social Support while 4 out of the 10 Unhappiest Countries were in the Bottom 10 in terms of Social Support
-9. Netherlands is the only nation that was in the Top 10 in terms of both Happiness and Generosity Botswana was the only nation to be in the Bottom 10 in both these categories 
+1. GDP Per Capita, Social Support and Healthy Life Expectancy had heavy influences on the Happiness score while Freedom to Make Life Choices had a moderate influence, Perceptions of Corruption had very little influence and Generosity had almost no influence at all
+2. 8 out of the Top 10 nations in terms of Happiness score are in Western Europe while 8 out of the Bottom 10 nations in terms of Happiness score are in Sub-Saharan Africa
+3. 5 out of the 10 Happiest Nations are in the Top 10 in terms of GDP Per Capita while only 3 out of the 10 Unhappiest Nations were in the Bottom 10 in terms of GDP Per Capita
+4. 7 out of the 10 Happiest Nations were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
+5. 5 out of the 10 Unhappiest countries figured in the Bottom 10 in terms of Healthy Life Expectancy as well while Israel and Switzerland were in the only nations in the Top 10 in both Happiness and Healthy Life Expectancy
+6. 6 out of the 10 Happiest Countires were in the Top 10 in terms of Freedom to Make Life Choices while Lebanon and Afghanistan were not only the only nations in the Bottom 10 in terms of Both Happiness and Freedom to Make Life Choices, but also the Bottom 2 in both
+7. 5 out of the 10 Happiest Countries were in the Top 10 in terms of Social Support while 4 out of the 10 Unhappiest Countries were in the Bottom 10 in terms of Social Support
+8. Netherlands is the only nation that was in the Top 10 in terms of both Happiness and Generosity Botswana was the only nation to be in the Bottom 10 in both these categories 
 
-## Conclusion:
+## Conclusions:
 
-1. Having a high GDP Per Capita, less Corruption and high degree of Freedom to make life choices definitely boosts the Happiness score
-2. Having a low Healthy Life Expectancy definitely drags down the Happiness Score
-3. Social support also had a major influence on the Happiness score while Generosity was the only indicator with little influence on the overall Happiness score
-4. The Western countries as well as Australia and New Zealand are happier places to live in than Asia and Africa while South America and Eastern Europe are somewhere in the middle
+1. A country should increase its resources, provide means for a longer living and offer good societal support from its people to increase its Happiness Score.
+2. The ranking of a country in each indicator individually doesn't necessarily affect its ranking in the Happiness index to a great extent, except for the Corruption and Freedom to Make Life Choices ranking. Even in these indicators, the Bottom 10 differs almost entirely from that of the overall Happiness Score
