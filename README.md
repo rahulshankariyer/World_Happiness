@@ -459,13 +459,12 @@ Total number of countries in each region:
 ## Insights:
 
 1. 8 out of the Top 10 nations in terms of Happiness score are in Western Europe while 8 out of the Bottom 10 nations in terms of Happiness score are in Sub-Saharan Africa
-2. A majority of the countries with the highest GDP are Western European countries. A closer look also shows us that the 4 countries from the North America and ANZ region - USA, Canada, Australia and NZ - are also near the top right, which indicates that they too have high GDP Per capita as well as Happiness Score
-3. A majority of the countries with low GDP Per Capita as well as low Happiness score are from Africa and the Middle East
-4. The Western European countries as well as North America and ANZ both had the best perception among its citizens when it comes to corruption while the Asian and African countries were among the worst in this regard
-5. 7 out of the Top 10 countries in terms of Happiness score were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
+2. 5 out of the 10 Happiest Nations are in the Top 10 in terms of GDP Per Capita while only 3 out of the 10 Unhappiest Nations were in the Bottom 10 in terms of GDP Per Capita
+3. 7 out of the 10 Happiest Nations were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
 6. 5 out of the 10 Unhappiest countries figured in the Bottom 10 in terms of Healthy Life Expectancy as well while Israel and Switzerland were in the only nations in the Top 10 in both Happiness and Healthy Life Expectancy
-7. Western Europe, North America and ANZ gave the best Freedom to make life choices while Africa and the Middle East lacked in this regard
-8. GDP Per Capita, Social Support and Healthy Life Expectancy had the biggest influence on the Happiness score of countries
+7. 6 out of the 10 Happiest Countires were in the Top 10 in terms of Freedom to Make Life Choices while Lebanon and Afghanistan were not only the only nations in the Bottom 10 in terms of Both Happiness and Freedom to Make Life Choices, but also the Bottom 2 in both
+8. 5 out of the 10 Happiest Countries were in the Top 10 in terms of Social Support while 4 out of the 10 Unhappiest Countries were in the Bottom 10 in terms of Social Support
+9. Netherlands is the only nation that was in the Top 10 in terms of both Happiness and Generosity Botswana was the only nation to be in the Bottom 10 in both these categories 
 
 ## Conclusion:
 
