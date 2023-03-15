@@ -418,13 +418,13 @@ Total number of countries in each region:
     plt.title('Plot between Happiness and Generosity')
     sns.scatterplot(x = data.generosity,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.legend(loc = 'lower right',fontsize = '12')
     plt.xlabel('Generosity')
     plt.ylabel('Happiness Score')
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Generosity.png)
 
 ### STEP 15: Top 10 & Bottom 10 Countries in Terms of Generosity
 
@@ -440,7 +440,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Countries%20in%20terms%20of%20Generosity.png)
 
     # Bottom 10 Countries in terms of Generosity
 
@@ -454,7 +454,7 @@ Total number of countries in each region:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Bottom%2010%20Countries%20in%20terms%20of%20Generosity.png)
 
 ## Insights:
 
