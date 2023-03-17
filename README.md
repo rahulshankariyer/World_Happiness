@@ -211,7 +211,7 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Freedom%20to%20Make%20Life%20Choices.png)
 
-### STEP 0: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
+### STEP 0: Happiness Score and Perception of Corruption
 
     # Corruption and Happiness
 
