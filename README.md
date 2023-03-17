@@ -179,6 +179,22 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP%20Per%20Capita.png)
 
+### STEP 5: Happiness Score and Healthy Life Expectancy
+
+    # Healthy Life Expectancy and Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and Healthy Life Expectancy')
+    sns.scatterplot(x = data.happiness_score,y = data.healthy_life_expectancy,hue = data.regional_indicator,s = 200)
+
+    plt.legend(loc = 'lower right',fontsize = 14)
+    plt.xlabel('Happiness Score')
+    plt.ylabel('Healthy Life Expectancy')
+
+<b> Output: </b>
+
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
+
 ### STEP 6: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
 
     # Corruption and Happiness
@@ -194,22 +210,6 @@ For this analysis, the countries were split into 10 different regions:
 <b> Output: </b>
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
-
-### STEP 8: Relationship between the Happiness Score and Healthy Life Expectancy of the Countries, by Region
-
-    # Healthy Life Expectancy and Happiness
-
-    plt.rcParams['figure.figsize'] = (15,7)
-    plt.title('Plot between Happiness and Healthy Life Expectancy')
-    sns.scatterplot(x = data.happiness_score,y = data.healthy_life_expectancy,hue = data.regional_indicator,s = 200)
-
-    plt.legend(loc = 'lower right',fontsize = 14)
-    plt.xlabel('Happiness Score')
-    plt.ylabel('Healthy Life Expectancy')
-
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
 
 ### STEP 10: Happiness Score and Freedom to Make Life Choices of Countries, by Region
 
