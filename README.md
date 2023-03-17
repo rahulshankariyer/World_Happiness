@@ -195,23 +195,7 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
 
-### STEP 6: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
-
-    # Corruption and Happiness
-
-    plt.rcParams['figure.figsize'] = (15,7)
-    plt.title('Plot between Happiness and Corruption')
-    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,s = 200)
-
-    plt.legend(loc = 'upper left',fontsize = 14)
-    plt.xlabel('Happiness Score')
-    plt.ylabel('Corruption Index')
-    
-<b> Output: </b>
-
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
-
-### STEP 10: Happiness Score and Freedom to Make Life Choices of Countries, by Region
+### STEP 6: Happiness Score and Freedom to Make Life Choices
 
     # Freedom to Make Life Choices and Happiness
 
@@ -226,6 +210,22 @@ For this analysis, the countries were split into 10 different regions:
 <b> Output: </b>
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Freedom%20to%20Make%20Life%20Choices.png)
+
+### STEP 0: Relationship between the Happiness Score and Corruption Index of the Countries, by Region
+
+    # Corruption and Happiness
+
+    plt.rcParams['figure.figsize'] = (15,7)
+    plt.title('Plot between Happiness and Corruption')
+    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,s = 200)
+
+    plt.legend(loc = 'upper left',fontsize = 14)
+    plt.xlabel('Happiness Score')
+    plt.ylabel('Corruption Index')
+    
+<b> Output: </b>
+
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
 
 ### STEP 14: Happiness Score and Generosity of Countries, by Region
 
