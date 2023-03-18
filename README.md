@@ -355,7 +355,7 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Generosity.png)
 
-    # Perception of Generosity by Regions
+    # Generosity by Regions
 
     generosity = data.groupby('regional_indicator')[['generosity']].mean()
     generosity
