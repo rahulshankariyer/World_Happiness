@@ -243,16 +243,22 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Generosity.png)
 
-### STEP 2: Top 10 and Bottom 10 Countries on the Happiness Chart
+### STEP 9: Factors Contributing to Happiness - Regions
+
+
+
+### STEP 10: Factors Contributing to Happiness - Top 10 Countries in the World
 
     # Top 10 Happiest Countries
 
-    top_10 = data.head(10)
-    top_10
+        top_10 = data.head(10)
+        top_10
     
 <b> Output: </b>
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Happiest%20Countries.png)
+
+### STEP 11: Factors Contributing to Happiness - Bottom 10 Countries in the World
 
     # Bottom 10 Unhappiest Countries
 
