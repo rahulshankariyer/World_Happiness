@@ -66,7 +66,7 @@ Remove unnecessary columns and rename the rest
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/After%20Removing%20Columns.png)
 
     # Renaming columns
 
@@ -76,7 +76,7 @@ Remove unnecessary columns and rename the rest
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/After%20Renaming%20Columns.png)
 
 ### Step 5:
 
@@ -108,7 +108,7 @@ Investigate null values (if any)
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Null%20Values.png)
 
 Remove null values
 
@@ -119,7 +119,7 @@ Remove null values
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Removing%20Null%20Values.png)
 
 ## Data Analysis Process
 
@@ -146,7 +146,7 @@ For this analysis, the countries were split into 10 different regions:
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
 
 ### STEP 3: Happiness Score and Social Support
 
@@ -172,7 +172,7 @@ For this analysis, the countries were split into 10 different regions:
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Social%20Support%20by%20Regions.png)
 
     social_support = social_support.sort_values('social_support',ascending = False)
 
@@ -185,7 +185,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Social%20Support%20in%20Various%20Regions.png)
 
 ### STEP 4: Happiness Score and GDP Per Capita
 
@@ -201,7 +201,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP%20Per%20Capita.png)
 
     # GDP Per Capita by Regions
 
@@ -210,7 +210,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20Per%20Capita%20by%20Regions.png)
 
     gdp_per_capita = gdp_per_capita.sort_values('gdp_per_capita',ascending = False)
 
@@ -223,7 +223,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20Per%20Capita%20in%20Various%20Regions.png)
 
 ### STEP 5: Happiness Score and Healthy Life Expectancy
 
@@ -239,7 +239,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
 
     # Healthy Life Expectancy by Regions
 
@@ -248,7 +248,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Healthy%20Life%20Expectancy%20by%20Regions.png)
 
     healthy_life_expectancy = healthy_life_expectancy.sort_values('healthy_life_expectancy',ascending = False)
 
@@ -261,7 +261,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Healthy%20Life%20Expectancy%20in%20Various%20Regions.png)
 
 ### STEP 6: Happiness Score and Freedom to Make Life Choices
 
@@ -286,7 +286,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20by%20Regions.png)
 
     freedom_to_make_life_choices = freedom_to_make_life_choices.sort_values('freedom_to_make_life_choices',ascending = False)
 
@@ -299,7 +299,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20in%20Various%20Regions.png)
 
 ### STEP 7: Happiness Score and Perception of Corruption
 
@@ -315,7 +315,7 @@ For this analysis, the countries were split into 10 different regions:
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
 
     # Perception of Corruption by Regions
 
@@ -324,7 +324,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20by%20Regions.png)
 
     perceptions_of_corruption = perceptions_of_corruption.sort_values('perceptions_of_corruption',ascending = False)
 
@@ -337,7 +337,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20in%20Various%20Regions.png)
 
 ### STEP 8: Happiness Score and Generosity
 
@@ -362,7 +362,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Generosity%20by%20Regions.png)
 
     generosity = generosity.sort_values('generosity',ascending = False)
 
@@ -375,7 +375,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Generosity%20in%20Various%20Regions.png)
 
 ### STEP 9: Factors Contributing to Happiness - Regions
 
@@ -400,7 +400,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Factors%20Contributing%20to%20Happiness%20in%20Various%20Regions.png)
 
 ### STEP 10: Factors Contributing to Happiness - Top 10 Countries in the World
 
@@ -424,7 +424,7 @@ For this analysis, the countries were split into 10 different regions:
     
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Factors%20Contributing%20to%20Happiness%20in%20Top%2010%20Happiest%20Countries.png)
 
 ### STEP 11: Factors Contributing to Happiness - Bottom 10 Countries in the World
 
@@ -448,7 +448,7 @@ For this analysis, the countries were split into 10 different regions:
 
 <b> Output: </b>
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Factors%20Contributing%20to%20Happiness%20in%20Top%2010%20Unhappiest%20Countries.png)
 
 ## Insights:
 
