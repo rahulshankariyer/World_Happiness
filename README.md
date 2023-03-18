@@ -35,7 +35,7 @@ Format the graphs
     sns.set_style('darkgrid')
     plt.rcParams['font.size'] = 15
     plt.rcParams['figure.figsize'] = (10,7)
-    plt.rcParams['figure.facecolor'] = '#17becf'
+    plt.rcParams['figure.facecolor'] = '#FAEBD7'
     
 ### Step 3:
 
@@ -57,26 +57,26 @@ Extract the data from the CSV file and view the data
 
 Remove unnecessary columns and rename the rest
 
-    # Removing unncessary columns
+    # Removing unnecessary columns
 
-    data_columns = ['Country','Regional indicator','Happiness score','Explained by: GDP per capita','Explained by: Social support','Explained by: Healthy life expectancy','Explained by: Freedom to make life choices','Explained by: Generosity','Explained by: Perceptions of corruption']
+    data_columns = ['Country','Regional indicator','Happiness score','Dystopia (1#83) + residual','Explained by: GDP per capita','Explained by: Social support','Explained by: Healthy life expectancy','Explained by: Freedom to make life choices','Explained by: Generosity','Explained by: Perceptions of corruption']
+
     data = data[data_columns].copy()
-
     data.head()
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/After%20Removing%20Columns.png)
+![alt text]()
 
     # Renaming columns
 
-    happy_df = {'Country':'country','Regional indicator':'regional_indicator','Happiness score':'happiness_score','Explained by: GDP per capita':'gdp_per_capita','Explained by: Social support':'social_support','Explained by: Healthy life expectancy':'healthy_life_expectancy','Explained by: Freedom to make life choices':'freedom_to_make_life_choices','Explained by: Generosity':'generosity','Explained by: Perceptions of corruption':'perceptions_of_corruption'}
+    happy_df = {'Country':'country','Regional indicator':'regional_indicator','Happiness score':'happiness_score','Dystopia (1#83) + residual':'dystopia','Explained by: GDP per capita':'gdp_per_capita','Explained by: Social support':'social_support','Explained by: Healthy life expectancy':'healthy_life_expectancy','Explained by: Freedom to make life choices':'freedom_to_make_life_choices','Explained by: Generosity':'generosity','Explained by: Perceptions of corruption':'perceptions_of_corruption'}
     data = data.rename(columns = happy_df)
     data.head()
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/After%20Renaming%20Columns.png)
+![alt text]()
 
 ### Step 5:
 
@@ -91,6 +91,7 @@ Check for null values, investigate if any and remove them
     country                         0
     regional_indicator              1
     happiness_score                 1
+    dystopia                        1
     gdp_per_capita                  1
     social_support                  1
     healthy_life_expectancy         1
@@ -107,7 +108,7 @@ Investigate null values (if any)
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Null%20Values.png)
+![alt text]()
 
 Remove null values
 
@@ -118,7 +119,7 @@ Remove null values
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Removing%20Null%20Values.png)
+![alt text]()
 
 ## Data Analysis Process
 
@@ -141,17 +142,18 @@ For this analysis, the countries were split into 10 different regions:
 
     cor = data.corr(method = 'pearson')
     f, ax = plt.subplots(figsize = (10,5))
-    sns.heatmap(cor, mask = np.zeros_like(cor,dtype = np.bool),cmap = 'Reds',square = True,ax = ax)
+    sns.heatmap(cor, mask = np.zeros_like(cor,dtype = np.bool),cmap = 'Reds',square = True,ax = ax,annot = True)
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
+![alt text]()
 
 ### STEP 3: Happiness Score and Social Support
 
     # Social Support and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
+    plt.rcParams['figure.facecolor'] = '#17becf'
     plt.title('Plot between Happiness and Social Support')
     sns.scatterplot(x = data.social_support,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
@@ -163,21 +165,65 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Social%20Support.png)
 
+    # Social Support by Regions
+
+    social_support = data.groupby('regional_indicator')[['social_support']].mean()
+    social_support
+    
+<b> Output: </b>
+
+![alt text]()
+
+    social_support = social_support.sort_values('social_support',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Social Support in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Social Support',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(social_support.index,social_support.social_support,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
+
 ### STEP 4: Happiness Score and GDP Per Capita
 
     # Plot between Happiness and GDP Per Capita
 
     plt.rcParams['figure.figsize'] = (15,7)
     plt.title('Plot between Happiness and GDP Per Capita')
-    sns.scatterplot(x = data.happiness_score,y = data.gdp_per_capita,hue = data.regional_indicator,s = 200)
+    sns.scatterplot(x = data.gdp_per_capita,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
     plt.legend(loc = 'lower right',fontsize = '10')
-    plt.xlabel('Happiness Score')
-    plt.ylabel('GDP Per Capita')
+    plt.xlabel('GDP Per Capita')
+    plt.ylabel('Happiness Score')
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20GDP%20Per%20Capita.png)
+![alt text]()
+
+    # GDP Per Capita by Regions
+
+    gdp_per_capita = data.groupby('regional_indicator')[['gdp_per_capita']].mean()
+    gdp_per_capita
+
+<b> Output: </b>
+
+![alt text]()
+
+    gdp_per_capita = gdp_per_capita.sort_values('gdp_per_capita',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('GDP Per Capita in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('GDP Per Capita',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(gdp_per_capita.index,gdp_per_capita.gdp_per_capita,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
 
 ### STEP 5: Happiness Score and Healthy Life Expectancy
 
@@ -185,15 +231,37 @@ For this analysis, the countries were split into 10 different regions:
 
     plt.rcParams['figure.figsize'] = (15,7)
     plt.title('Plot between Happiness and Healthy Life Expectancy')
-    sns.scatterplot(x = data.happiness_score,y = data.healthy_life_expectancy,hue = data.regional_indicator,s = 200)
+    sns.scatterplot(x = data.healthy_life_expectancy,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
     plt.legend(loc = 'lower right',fontsize = 14)
-    plt.xlabel('Happiness Score')
-    plt.ylabel('Healthy Life Expectancy')
+    plt.xlabel('Healthy Life Expectancy')
+    plt.ylabel('Happiness Score')
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Healthy%20Life%20Expectancy.png)
+![alt text]()
+
+    # Healthy Life Expectancy by Regions
+
+    healthy_life_expectancy = data.groupby('regional_indicator')[['healthy_life_expectancy']].mean()
+    healthy_life_expectancy
+
+<b> Output: </b>
+
+![alt text]()
+
+    healthy_life_expectancy = healthy_life_expectancy.sort_values('healthy_life_expectancy',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Healthy Life Expectancy in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Healthy Life Expectancy',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(healthy_life_expectancy.index,healthy_life_expectancy.healthy_life_expectancy,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
 
 ### STEP 6: Happiness Score and Freedom to Make Life Choices
 
@@ -211,21 +279,65 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Freedom%20to%20Make%20Life%20Choices.png)
 
+    # Freedom to Make Life Choices by Regions
+
+    freedom_to_make_life_choices = data.groupby('regional_indicator')[['freedom_to_make_life_choices']].mean()
+    freedom_to_make_life_choices
+
+<b> Output: </b>
+
+![alt text]()
+
+    freedom_to_make_life_choices = freedom_to_make_life_choices.sort_values('freedom_to_make_life_choices',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Freedom to Make Life Choices in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Freedom to Make Life Choices',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(freedom_to_make_life_choices.index,freedom_to_make_life_choices.freedom_to_make_life_choices,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
+
 ### STEP 7: Happiness Score and Perception of Corruption
 
     # Corruption and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
     plt.title('Plot between Happiness and Corruption')
-    sns.scatterplot(x = data.happiness_score,y = data.perceptions_of_corruption,hue = data.regional_indicator,s = 200)
+    sns.scatterplot(x = data.perceptions_of_corruption,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
     plt.legend(loc = 'upper left',fontsize = 14)
-    plt.xlabel('Happiness Score')
-    plt.ylabel('Corruption Index')
+    plt.xlabel('Corruption Index')
+    plt.ylabel('Happiness Score')
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
+![alt text]()
+
+    # Perception of Corruption by Regions
+
+    perceptions_of_corruption = data.groupby('regional_indicator')[['perceptions_of_corruption']].mean()
+    perceptions_of_corruption
+
+<b> Output: </b>
+
+![alt text]()
+
+    perceptions_of_corruption = perceptions_of_corruption.sort_values('perceptions_of_corruption',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Perception of Corruption in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Corruption Index',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(perceptions_of_corruption.index,perceptions_of_corruption.perceptions_of_corruption,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
 
 ### STEP 8: Happiness Score and Generosity
 
@@ -243,44 +355,105 @@ For this analysis, the countries were split into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20between%20Happiness%20and%20Generosity.png)
 
+    # Perception of Generosity by Regions
+
+    generosity = data.groupby('regional_indicator')[['generosity']].mean()
+    generosity
+
+<b> Output: </b>
+
+![alt text]()
+
+    generosity = generosity.sort_values('generosity',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Generosity in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Generosity',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+    plt.bar(generosity.index,generosity.generosity,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+
+<b> Output: </b>
+
+![alt text]()
+
 ### STEP 9: Factors Contributing to Happiness - Regions
 
+    # Factors Contributing to Happiness in Each Region
 
+    regional_happiness = data.groupby('regional_indicator')[['happiness_score','dystopia','social_support','gdp_per_capita','healthy_life_expectancy','freedom_to_make_life_choices','perceptions_of_corruption','generosity']].mean()
+    regional_happiness = regional_happiness.sort_values('happiness_score',ascending = False)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Factors Contributing to Happiness in Various Regions')
+    plt.xlabel('Regions',fontsize = 15)
+    plt.ylabel('Happiness Score',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+
+    plt.bar(regional_happiness.index,regional_happiness.dystopia,color = '#FF4040')
+    plt.bar(regional_happiness.index,regional_happiness.gdp_per_capita,bottom = regional_happiness.dystopia,color = '#104E8B')
+    plt.bar(regional_happiness.index,regional_happiness.social_support,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita,color = '#00CDCD')
+    plt.bar(regional_happiness.index,regional_happiness.healthy_life_expectancy,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support,color = '#A2CD5A')
+    plt.bar(regional_happiness.index,regional_happiness.freedom_to_make_life_choices,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy,color = '#FFD700')
+    plt.bar(regional_happiness.index,regional_happiness.perceptions_of_corruption,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy + regional_happiness.freedom_to_make_life_choices,color = '#B22222')
+    plt.bar(regional_happiness.index,regional_happiness.generosity,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy + regional_happiness.freedom_to_make_life_choices + regional_happiness.perceptions_of_corruption,color = '#68228B')
+
+<b> Output: </b>
+
+![alt text]()
 
 ### STEP 10: Factors Contributing to Happiness - Top 10 Countries in the World
 
     # Top 10 Happiest Countries
 
-        top_10 = data.head(10)
-        top_10
+    top_10 = data.head(10)
+
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Factors Contributing to Happiness in Top 10 Happiest Countries')
+    plt.xlabel('Countries',fontsize = 15)
+    plt.ylabel('Happiness Score',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+
+    plt.bar(top_10.country,top_10.dystopia,color = '#FF4040')
+    plt.bar(top_10.country,top_10.gdp_per_capita,bottom = top_10.dystopia,color = '#104E8B')
+    plt.bar(top_10.country,top_10.social_support,bottom = top_10.dystopia + top_10.gdp_per_capita,color = '#00CDCD')
+    plt.bar(top_10.country,top_10.healthy_life_expectancy,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support,color = '#A2CD5A')
+    plt.bar(top_10.country,top_10.freedom_to_make_life_choices,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy,color = '#FFD700')
+    plt.bar(top_10.country,top_10.perceptions_of_corruption,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy + top_10.freedom_to_make_life_choices,color = '#B22222')
+    plt.bar(top_10.country,top_10.generosity,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy + top_10.freedom_to_make_life_choices + top_10.perceptions_of_corruption,color = '#68228B')
     
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Happiest%20Countries.png)
+![alt text]()
 
 ### STEP 11: Factors Contributing to Happiness - Bottom 10 Countries in the World
 
     # Bottom 10 Unhappiest Countries
 
     bottom_10 = data.tail(10)
-    bottom_10
+    
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Factors Contributing to Happiness in Top 10 Unhappiest Countries')
+    plt.xlabel('Countries',fontsize = 15)
+    plt.ylabel('Happiness Score',fontsize = 15)
+    plt.xticks(rotation = 30,ha = 'right')
+
+    plt.bar(bottom_10.country,bottom_10.dystopia,color = '#FF4040')
+    plt.bar(bottom_10.country,bottom_10.gdp_per_capita,bottom = bottom_10.dystopia,color = '#104E8B')
+    plt.bar(bottom_10.country,bottom_10.social_support,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita,color = '#00CDCD')
+    plt.bar(bottom_10.country,bottom_10.healthy_life_expectancy,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support,color = '#A2CD5A')
+    plt.bar(bottom_10.country,bottom_10.freedom_to_make_life_choices,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy,color = '#FFD700')
+    plt.bar(bottom_10.country,bottom_10.perceptions_of_corruption,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy + bottom_10.freedom_to_make_life_choices,color = '#B22222')
+    plt.bar(bottom_10.country,bottom_10.generosity,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy + bottom_10.freedom_to_make_life_choices + bottom_10.perceptions_of_corruption,color = '#68228B')
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%2010%20Unhappiest%20Countries.png)
+![alt text]()
 
 ## Insights:
 
-1. GDP Per Capita, Social Support and Healthy Life Expectancy had heavy influences on the Happiness score while Freedom to Make Life Choices had a moderate influence, Perceptions of Corruption had very little influence and Generosity had almost no influence at all
-2. 8 out of the Top 10 nations in terms of Happiness score are in Western Europe while 8 out of the Bottom 10 nations in terms of Happiness score are in Sub-Saharan Africa
-3. 5 out of the 10 Happiest Nations are in the Top 10 in terms of GDP Per Capita while only 3 out of the 10 Unhappiest Nations were in the Bottom 10 in terms of GDP Per Capita
-4. 7 out of the 10 Happiest Nations were also among the Top 10 best in terms of Perception of Corruption while Afghanistan and Lesotho were the only two nations in the Bottom 10 in both Happiness and Perception of Corruption.
-5. 5 out of the 10 Unhappiest countries figured in the Bottom 10 in terms of Healthy Life Expectancy as well while Israel and Switzerland were in the only nations in the Top 10 in both Happiness and Healthy Life Expectancy
-6. 6 out of the 10 Happiest Countires were in the Top 10 in terms of Freedom to Make Life Choices while Lebanon and Afghanistan were not only the only nations in the Bottom 10 in terms of Both Happiness and Freedom to Make Life Choices, but also the Bottom 2 in both
-7. 5 out of the 10 Happiest Countries were in the Top 10 in terms of Social Support while 4 out of the 10 Unhappiest Countries were in the Bottom 10 in terms of Social Support
-8. Netherlands is the only nation that was in the Top 10 in terms of both Happiness and Generosity Botswana was the only nation to be in the Bottom 10 in both these categories 
+1. 
 
 ## Conclusions:
 
-1. A country should increase its resources, provide means for a longer living and offer good societal support from its people to increase its Happiness Score.
-2. The ranking of a country in each indicator individually doesn't necessarily affect its ranking in the Happiness index to a great extent, except for the Corruption and Freedom to Make Life Choices ranking. Even in these indicators, the Bottom 10 differs almost entirely from that of the overall Happiness Score
+1. 
