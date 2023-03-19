@@ -2,7 +2,7 @@
 
 ## Project Objective
 
-Exploratory Data Analysis on the World Happiness Data of 146 countries, to explore the correlation between Per Capita GDP, Freedom to Make Life Choices, Perceptions of Corruption, Life Expectancy, Social Support, Generosity.
+Exploratory Data Analysis on the World Happiness Data of 146 countries, to explore the correlation between Happiness and factors influencing happiness such as Per Capita GDP, Freedom to Make Life Choices, Perceptions of Corruption, Life Expectancy, Social Support, and Generosity.
 
 ## Data Used
 
@@ -125,7 +125,7 @@ Remove null values
 
 ### STEP 1: Total Number of Countries in each Region
  
-For this analysis, the countries were split into 10 different regions:
+For this analysis, the countries were grouped into 10 different regions:
 
     # Total Countries by Region
 
