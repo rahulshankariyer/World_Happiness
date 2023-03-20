@@ -411,13 +411,17 @@ For this analysis, the countries were grouped into 10 different regions:
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Generosity%20by%20Regions.png)
 
     generosity = generosity.sort_values('generosity',ascending = False)
+    
+    colors = []
+    for region in generosity.index:
+        colors.append(region_colours[region])
+    colors
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Generosity in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('Generosity',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(generosity.index,generosity.generosity,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(generosity.index,generosity.generosity,color = colors)
 
 <b> Output: </b>
 
