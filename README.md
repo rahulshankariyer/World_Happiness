@@ -188,13 +188,20 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Social%20Support%20by%20Regions.png)
 
+    region_colours = {'Western Europe':'C0','Middle East and North Africa':'C1','North America and ANZ':'C2','Central and Eastern Europe':'C3','Latin America and Caribbean':'C4','Southeast Asia':'C5','Commonwealth of Independent States':'C6','Sub-Saharan Africa':'C7','East Asia':'C8','South Asia':'C9'}
+    
     social_support = social_support.sort_values('social_support',ascending = False)
 
+    colors = []
+    for region in social_support.index:
+        colors.append(region_colours[region])
+    colors
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Social Support in Various Regions')
     plt.ylabel('Social Support',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(social_support.index,social_support.social_support,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(social_support.index,social_support.social_support,color = colors)
 
 <b> Output: </b>
 
