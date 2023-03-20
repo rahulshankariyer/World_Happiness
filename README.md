@@ -148,6 +148,19 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Correlation%20Map.png)
 
+    # Top Important Factors Affecting Happiness in 2022
+
+    happiness_factors = cor['happiness_score'][2:]
+    happiness_factors = happiness_factors.sort_values()
+    happiness_factors
+    colors = ['C9','C3','C8','C0','C4','C2']
+    plt.rcParams['figure.figsize'] = (12,8)
+    plt.title('Top Important Factors Affecting Happiness in 2022')
+    plt.xlabel('Weightage',fontsize = 15)
+    plt.barh(happiness_factors.index,happiness_factors,color = colors)
+    
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Top%20Important%20Factors%20Affecting%20Happiness%20in%202022.png)
+
 ### STEP 3: Happiness Score and Social Support
 
     # Social Support and Happiness
