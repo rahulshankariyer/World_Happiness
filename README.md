@@ -166,13 +166,14 @@ For this analysis, the countries were grouped into 10 different regions:
     # Social Support and Happiness
 
     plt.rcParams['figure.figsize'] = (15,7)
-    plt.rcParams['figure.facecolor'] = '#17becf'
     plt.title('Plot between Happiness and Social Support')
     sns.scatterplot(x = data.social_support,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.legend(loc = 'lower right',fontsize = '12')
     plt.xlabel('Social Support')
+    plt.gca().set_xlim([0,1.5])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
 
 <b> Output: </b>
 
@@ -191,7 +192,6 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Social Support in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('Social Support',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
     plt.bar(social_support.index,social_support.social_support,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
