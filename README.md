@@ -279,13 +279,17 @@ For this analysis, the countries were grouped into 10 different regions:
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Healthy%20Life%20Expectancy%20by%20Regions.png)
 
     healthy_life_expectancy = healthy_life_expectancy.sort_values('healthy_life_expectancy',ascending = False)
+    
+    colors = []
+    for region in healthy_life_expectancy.index:
+        colors.append(region_colours[region])
+    colors
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Healthy Life Expectancy in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('Healthy Life Expectancy',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(healthy_life_expectancy.index,healthy_life_expectancy.healthy_life_expectancy,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(healthy_life_expectancy.index,healthy_life_expectancy.healthy_life_expectancy,color = colors)
 
 <b> Output: </b>
 
