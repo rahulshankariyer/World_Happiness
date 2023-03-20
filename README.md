@@ -261,7 +261,9 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.legend(loc = 'lower right',fontsize = 14)
     plt.xlabel('Healthy Life Expectancy')
+    plt.gca().set_xlim([0,1])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
 
 <b> Output: </b>
 
