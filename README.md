@@ -436,7 +436,6 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Factors Contributing to Happiness in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
@@ -447,6 +446,8 @@ For this analysis, the countries were grouped into 10 different regions:
     plt.bar(regional_happiness.index,regional_happiness.freedom_to_make_life_choices,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy,color = '#FFD700')
     plt.bar(regional_happiness.index,regional_happiness.perceptions_of_corruption,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy + regional_happiness.freedom_to_make_life_choices,color = '#B22222')
     plt.bar(regional_happiness.index,regional_happiness.generosity,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support + regional_happiness.healthy_life_expectancy + regional_happiness.freedom_to_make_life_choices + regional_happiness.perceptions_of_corruption,color = '#68228B')
+    
+    plt.legend(['Dystopia','GDP Per Capita','Social Support','Healthy Life Expectancy','Freedom to Make Life Choices','Perceptions of Corruption','Generosity'],fontsize = 10)
 
 <b> Output: </b>
 
