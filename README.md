@@ -303,9 +303,11 @@ For this analysis, the countries were grouped into 10 different regions:
     plt.title('Plot between Happiness and Freedom to Make Life Choices')
     sns.scatterplot(x = data.freedom_to_make_life_choices,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = '12')
+    plt.legend(loc = 'lower right',fontsize = '12')
     plt.xlabel('Freedom to Make Life Choices')
+    plt.gca().set_xlim([0,0.8])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
 
 <b> Output: </b>
 
@@ -321,13 +323,17 @@ For this analysis, the countries were grouped into 10 different regions:
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Freedom%20to%20Make%20Life%20Choices%20by%20Regions.png)
 
     freedom_to_make_life_choices = freedom_to_make_life_choices.sort_values('freedom_to_make_life_choices',ascending = False)
+    
+    colors = []
+    for region in freedom_to_make_life_choices.index:
+        colors.append(region_colours[region])
+    colors
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Freedom to Make Life Choices in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('Freedom to Make Life Choices',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(freedom_to_make_life_choices.index,freedom_to_make_life_choices.freedom_to_make_life_choices,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(freedom_to_make_life_choices.index,freedom_to_make_life_choices.freedom_to_make_life_choices,color = colors)
 
 <b> Output: </b>
 
