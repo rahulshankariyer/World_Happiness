@@ -393,7 +393,9 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.legend(loc = 'lower right',fontsize = '12')
     plt.xlabel('Generosity')
+    plt.gca().set_xlim([0,0.5])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
 
 <b> Output: </b>
 
