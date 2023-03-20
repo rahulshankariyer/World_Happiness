@@ -347,9 +347,11 @@ For this analysis, the countries were grouped into 10 different regions:
     plt.title('Plot between Happiness and Corruption')
     sns.scatterplot(x = data.perceptions_of_corruption,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
-    plt.legend(loc = 'upper left',fontsize = 14)
+    plt.legend(loc = 'lower right',fontsize = 14)
     plt.xlabel('Corruption Index')
+    plt.gca().set_xlim([0,0.6])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
     
 <b> Output: </b>
 
