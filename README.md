@@ -439,7 +439,7 @@ For this analysis, the countries were grouped into 10 different regions:
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
-    plt.bar(regional_happiness.index,regional_happiness.dystopia,color = '#FF4040')
+    plt.bar(regional_happiness.index,regional_happiness.dystopia,color = '#CD5B45')
     plt.bar(regional_happiness.index,regional_happiness.gdp_per_capita,bottom = regional_happiness.dystopia,color = '#104E8B')
     plt.bar(regional_happiness.index,regional_happiness.social_support,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita,color = '#00CDCD')
     plt.bar(regional_happiness.index,regional_happiness.healthy_life_expectancy,bottom = regional_happiness.dystopia + regional_happiness.gdp_per_capita + regional_happiness.social_support,color = '#A2CD5A')
@@ -461,17 +461,18 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Factors Contributing to Happiness in Top 10 Happiest Countries')
-    plt.xlabel('Countries',fontsize = 15)
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
-    plt.bar(top_10.country,top_10.dystopia,color = '#FF4040')
+    plt.bar(top_10.country,top_10.dystopia,color = '#CD5B45')
     plt.bar(top_10.country,top_10.gdp_per_capita,bottom = top_10.dystopia,color = '#104E8B')
     plt.bar(top_10.country,top_10.social_support,bottom = top_10.dystopia + top_10.gdp_per_capita,color = '#00CDCD')
     plt.bar(top_10.country,top_10.healthy_life_expectancy,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support,color = '#A2CD5A')
     plt.bar(top_10.country,top_10.freedom_to_make_life_choices,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy,color = '#FFD700')
     plt.bar(top_10.country,top_10.perceptions_of_corruption,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy + top_10.freedom_to_make_life_choices,color = '#B22222')
     plt.bar(top_10.country,top_10.generosity,bottom = top_10.dystopia + top_10.gdp_per_capita + top_10.social_support + top_10.healthy_life_expectancy + top_10.freedom_to_make_life_choices + top_10.perceptions_of_corruption,color = '#68228B')
+    
+    plt.legend(['Dystopia','GDP Per Capita','Social Support','Healthy Life Expectancy','Freedom to Make Life Choices','Perceptions of Corruption','Generosity'],fontsize = 10,loc = 'upper right')
     
 <b> Output: </b>
 
