@@ -357,7 +357,7 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Plot%20Between%20Happiness%20and%20Corruption.png)
 
-    # Perception of Corruption by Regions
+    # Absence of Corruption by Regions
 
     perceptions_of_corruption = data.groupby('regional_indicator')[['perceptions_of_corruption']].mean()
     perceptions_of_corruption
@@ -367,17 +367,21 @@ For this analysis, the countries were grouped into 10 different regions:
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20by%20Regions.png)
 
     perceptions_of_corruption = perceptions_of_corruption.sort_values('perceptions_of_corruption',ascending = False)
+    
+    colors = []
+    for region in perceptions_of_corruption.index:
+        colors.append(region_colours[region])
+    colors
 
     plt.rcParams['figure.figsize'] = (12,8)
-    plt.title('Perception of Corruption in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
+    plt.title('Absence of Corruption in Various Regions')
     plt.ylabel('Corruption Index',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(perceptions_of_corruption.index,perceptions_of_corruption.perceptions_of_corruption,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(perceptions_of_corruption.index,perceptions_of_corruption.perceptions_of_corruption,color = colors)
 
 <b> Output: </b>
 
-![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Perception%20of%20Corruption%20in%20Various%20Regions.png)
+![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/Absence%20of%20Corruption%20in%20Various%20Regions.png)
 
 ### STEP 8: Happiness Score and Generosity
 
