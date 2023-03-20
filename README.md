@@ -486,17 +486,18 @@ For this analysis, the countries were grouped into 10 different regions:
     
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Factors Contributing to Happiness in Top 10 Unhappiest Countries')
-    plt.xlabel('Countries',fontsize = 15)
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
-    plt.bar(bottom_10.country,bottom_10.dystopia,color = '#FF4040')
+    plt.bar(bottom_10.country,bottom_10.dystopia,color = '#CD5B45')
     plt.bar(bottom_10.country,bottom_10.gdp_per_capita,bottom = bottom_10.dystopia,color = '#104E8B')
     plt.bar(bottom_10.country,bottom_10.social_support,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita,color = '#00CDCD')
     plt.bar(bottom_10.country,bottom_10.healthy_life_expectancy,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support,color = '#A2CD5A')
     plt.bar(bottom_10.country,bottom_10.freedom_to_make_life_choices,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy,color = '#FFD700')
     plt.bar(bottom_10.country,bottom_10.perceptions_of_corruption,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy + bottom_10.freedom_to_make_life_choices,color = '#B22222')
     plt.bar(bottom_10.country,bottom_10.generosity,bottom = bottom_10.dystopia + bottom_10.gdp_per_capita + bottom_10.social_support + bottom_10.healthy_life_expectancy + bottom_10.freedom_to_make_life_choices + bottom_10.perceptions_of_corruption,color = '#68228B')
+    
+    plt.legend(['Dystopia','GDP Per Capita','Social Support','Healthy Life Expectancy','Freedom to Make Life Choices','Perceptions of Corruption','Generosity'],fontsize = 10,loc = 'upper right')
 
 <b> Output: </b>
 
