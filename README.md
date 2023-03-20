@@ -235,13 +235,17 @@ For this analysis, the countries were grouped into 10 different regions:
 ![alt text](https://raw.githubusercontent.com/rahulshankariyer/World_Happiness/main/GDP%20Per%20Capita%20by%20Regions.png)
 
     gdp_per_capita = gdp_per_capita.sort_values('gdp_per_capita',ascending = False)
+    
+    colors = []
+    for region in gdp_per_capita.index:
+        colors.append(region_colours[region])
+    colors
 
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('GDP Per Capita in Various Regions')
-    plt.xlabel('Regions',fontsize = 15)
     plt.ylabel('GDP Per Capita',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
-    plt.bar(gdp_per_capita.index,gdp_per_capita.gdp_per_capita,color = ['C3','C6','C8','C4','C1','C2','C9','C5','C7','C0'])
+    plt.bar(gdp_per_capita.index,gdp_per_capita.gdp_per_capita,color = colors)
 
 <b> Output: </b>
 
