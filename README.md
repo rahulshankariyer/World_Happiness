@@ -217,7 +217,9 @@ For this analysis, the countries were grouped into 10 different regions:
 
     plt.legend(loc = 'lower right',fontsize = '10')
     plt.xlabel('GDP Per Capita')
+    plt.gca().set_xlim([0,2.5])
     plt.ylabel('Happiness Score')
+    plt.gca().set_ylim([0,8])
 
 <b> Output: </b>
 
