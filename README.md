@@ -416,8 +416,7 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in generosity.index:
         colors.append(region_colours[region])
-    colors
-
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Generosity in Various Regions')
     plt.ylabel('Generosity',fontsize = 15)
