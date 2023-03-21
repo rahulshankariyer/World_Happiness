@@ -455,12 +455,12 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ### STEP 10: Factors Contributing to Happiness - Top 10 Countries in the World
 
-    # Top 10 Happiest Countries
+    # 10 Happiest Countries
 
     top_10 = data.head(10)
 
     plt.rcParams['figure.figsize'] = (12,8)
-    plt.title('Factors Contributing to Happiness in Top 10 Happiest Countries')
+    plt.title('Factors Contributing to Happiness in 10 Happiest Countries')
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
@@ -480,12 +480,12 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ### STEP 11: Factors Contributing to Happiness - Bottom 10 Countries in the World
 
-    # Bottom 10 Unhappiest Countries
+    # 10 Unhappiest Countries
 
     bottom_10 = data.tail(10)
     
     plt.rcParams['figure.figsize'] = (12,8)
-    plt.title('Factors Contributing to Happiness in Top 10 Unhappiest Countries')
+    plt.title('Factors Contributing to Happiness in 10 Unhappiest Countries')
     plt.ylabel('Happiness Score',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
 
