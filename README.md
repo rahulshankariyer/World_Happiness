@@ -153,7 +153,13 @@ For this analysis, the countries were grouped into 10 different regions:
     happiness_factors = cor['happiness_score'][2:]
     happiness_factors = happiness_factors.sort_values()
     happiness_factors
-    colors = ['C9','C3','C8','C0','C4','C2']
+    
+    happiness_factors_colors = {'social_support':'#00CDCD','gdp_per_capita':'#104E8B','healthy_life_expectancy':'#A2CD5A','freedom_to_make_life_choices':'#FFD700','perceptions_of_corruption':'#B22222','generosity':'#68228B'}
+
+    colors = []
+    for factor in happiness_factors.index:
+        colors.append(happiness_factors_colors[factor])
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Top Important Factors Affecting Happiness in 2022')
     plt.xlabel('Weightage',fontsize = 15)
@@ -195,7 +201,6 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in social_support.index:
         colors.append(region_colours[region])
-    colors
     
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Social Support in Various Regions')
@@ -239,8 +244,7 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in gdp_per_capita.index:
         colors.append(region_colours[region])
-    colors
-
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('GDP Per Capita in Various Regions')
     plt.ylabel('GDP Per Capita',fontsize = 15)
@@ -283,8 +287,7 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in healthy_life_expectancy.index:
         colors.append(region_colours[region])
-    colors
-
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Healthy Life Expectancy in Various Regions')
     plt.ylabel('Healthy Life Expectancy',fontsize = 15)
@@ -327,8 +330,7 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in freedom_to_make_life_choices.index:
         colors.append(region_colours[region])
-    colors
-
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Freedom to Make Life Choices in Various Regions')
     plt.ylabel('Freedom to Make Life Choices',fontsize = 15)
@@ -348,7 +350,7 @@ For this analysis, the countries were grouped into 10 different regions:
     sns.scatterplot(x = data.perceptions_of_corruption,y = data.happiness_score,hue = data.regional_indicator,s = 200)
 
     plt.legend(loc = 'lower right',fontsize = 14)
-    plt.xlabel('Corruption Index')
+    plt.xlabel('Absence of Corruption')
     plt.gca().set_xlim([0,0.6])
     plt.ylabel('Happiness Score')
     plt.gca().set_ylim([0,8])
