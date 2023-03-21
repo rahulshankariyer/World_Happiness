@@ -373,11 +373,10 @@ For this analysis, the countries were grouped into 10 different regions:
     colors = []
     for region in perceptions_of_corruption.index:
         colors.append(region_colours[region])
-    colors
-
+    
     plt.rcParams['figure.figsize'] = (12,8)
     plt.title('Absence of Corruption in Various Regions')
-    plt.ylabel('Corruption Index',fontsize = 15)
+    plt.ylabel('Absence of Corruption',fontsize = 15)
     plt.xticks(rotation = 30,ha = 'right')
     plt.bar(perceptions_of_corruption.index,perceptions_of_corruption.perceptions_of_corruption,color = colors)
 
