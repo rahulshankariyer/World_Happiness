@@ -505,8 +505,23 @@ For this analysis, the countries were grouped into 10 different regions:
 
 ## Insights:
 
-1. 
+1. The top 3 factors that influence happiness are, in order, GDP Per Capita, Social Support and Healthy Life Expectancy.
+2. Surprisingly, Freedom to Make Life Choices ranks 4th, and had little (no) correlation with any other factor.
+3. Absence of Corruption & Generosity played a negligible role in influencing happiness.
+4. The highest correlation was between GDP Per Capita and Healthy Life Expectancy.
+
+## Notes:
+
+1. The insights are for Happiness Worldwide.
+2. Since the Original Data had already ranked the nations, no ranking, by country or region, was discussed as an insight.
+3. The data on Generosity may be inaccurate as the question asked on it pertained to "an act of generosity or charity yesterday"
 
 ## Conclusions:
 
-1. 
+1. GDP Per Capita, Social Support, and Healthy Life Expectancy being basic needs, and highly correlated, the developed/affluent nations fared well on the Happiness Chart.
+2. While Freedom to Make Life Choices was more important in countries that had a tradition of Liberal Democracy, countries that never had freedoms do not think of it as contributor to happiness.
+3. Absence of Corruption scored low in most countries probably because of the following:
+
+    a) People in developed countries have come to expect it as a routine.
+    
+    b) In many countries, people have accepted it, or are ignorant about it.
